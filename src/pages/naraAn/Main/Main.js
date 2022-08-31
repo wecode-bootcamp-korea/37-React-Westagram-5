@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Main() {
+function MainNara() {
   return <h1>naraMain</h1>;
 }
 
-export default Main;
+export default MainNara;

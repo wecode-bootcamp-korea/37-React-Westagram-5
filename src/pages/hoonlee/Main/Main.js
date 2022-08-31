@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Main() {
+function MainHoon() {
   return <h1>hoonMain</h1>;
 }
 
-export default Main;
+export default MainHoon;

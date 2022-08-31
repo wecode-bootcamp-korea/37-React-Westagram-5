@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Login() {
+function LoginHoon() {
   return <h1>hoonLogin</h1>;
 }
 
-export default Login;
+export default LoginHoon;

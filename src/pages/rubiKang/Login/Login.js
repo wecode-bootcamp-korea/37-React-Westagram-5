@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Login() {
+function LoginRubi() {
   return <h1>rubiLogin</h1>;
 }
 
-export default Login;
+export default LoginRubi;

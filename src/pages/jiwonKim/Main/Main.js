@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Main() {
+function MainJiwon() {
   return <h1>jiwonMain</h1>;
 }
 
-export default Main;
+export default MainJiwon;

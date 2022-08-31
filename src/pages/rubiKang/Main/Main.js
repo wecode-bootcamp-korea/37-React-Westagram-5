@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Main() {
+function MainRubi() {
   return <h1>rubiMain</h1>;
 }
 
-export default Main;
+export default MainRubi;
