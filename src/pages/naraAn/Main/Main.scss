@@ -1,0 +1,275 @@
+/* Color */
+$white-color: #ffffff;
+$black-color: #030303;
+$blue-color: #0095f6;
+$blue-dark-color: #3b6088;
+$grey-light-color: #fafafa;
+$grey-color: #eaeaea;
+$grey-dark-color: #909090;
+$red-color: #ee4955;
+
+/* Size */
+$padding: 12px;
+$avatar-size: 40px;
+$avatar-small-size: 36px;
+
+/* Font Size */
+$font-large: 18px;
+$font-medium: 14px;
+$font-small: 12px;
+$font-micro: 10px;
+
+@mixin flexSort($justify, $alignItems) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+.list_style {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+button {
+  background-color: $white-color;
+  border-style: none;
+}
+
+input {
+  outline: none;
+}
+
+.title {
+  font-family: 'Lobster', cursive;
+}
+
+.user_img {
+  width: $avatar-small-size;
+  height: $avatar-small-size;
+  margin-right: $padding;
+  border: 1px solid $grey-color;
+  border-radius: 50%;
+}
+
+.user_name {
+  font-weight: bold;
+}
+
+.user_data {
+  margin-left: $padding;
+}
+
+.flex {
+  @include flexSort(space-between, flex-start);
+}
+
+.comment_style {
+  margin-left: $padding;
+  font-size: $font-medium;
+}
+
+/* nav */
+
+.nav {
+  @include flexSort(space-between, center);
+  padding: $padding calc($padding * 10);
+  background-color: $white-color;
+  border-bottom: 2px solid $grey-color;
+
+  .title {
+    margin-left: $padding;
+    padding: 0 $padding;
+    border-left: 1px solid $black-color;
+    font-size: $font-large;
+    font-weight: bold;
+  }
+
+  &_search {
+    @include flexSort(center, center);
+    width: 30%;
+    font-size: $font-medium;
+
+    input {
+      width: 100%;
+      padding: 5px $padding;
+      border: 1px solid $grey-color;
+      border-radius: 5px;
+      background-color: $grey-light-color;
+    }
+
+    i {
+      position: absolute;
+      color: $grey-dark-color;
+    }
+  }
+
+  &_icons {
+    display: flex;
+
+    i {
+      margin-left: $padding;
+      color: $grey-dark-color;
+      font-size: $font-large;
+    }
+  }
+}
+
+/* 피드 */
+
+main {
+  @include flexSort(space-around, flex-start);
+  padding: calc($padding * 3) calc($padding * 23);
+  height: 100vh;
+  background-color: $grey-light-color;
+  font-size: $font-medium;
+
+  .feeds {
+    width: 470px;
+    background-color: $white-color;
+    border: 2px solid $grey-color;
+    border-radius: 5px;
+
+    &_header {
+      @include flexSort(space-between, flex-start);
+      padding: $padding;
+
+      .user_data {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .main_img {
+      width: 470px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+    .feed_contents {
+      padding: 0 $padding;
+      font-size: $font-medium;
+
+      .feed_icons {
+        @include flexSort(space-between, flex-start);
+        margin: 0;
+        padding-left: 0;
+
+        i {
+          font-size: calc($font-medium * 1.5);
+        }
+      }
+
+      .feed_likes {
+        @include flexSort(flex-start, center);
+        margin: $padding 0;
+      }
+      .feed_text {
+        @include flexSort(space-between, center);
+        padding-left: 0;
+        margin: 0;
+
+        button {
+          color: $grey-dark-color;
+          font-weight: bold;
+        }
+      }
+
+      p:last-child {
+        color: $grey-dark-color;
+        font-weight: bold;
+      }
+      #new_comment_location ul {
+        margin: 0;
+        padding-left: 0;
+      }
+    }
+    #comment_write {
+      @include flexSort(space-between, flex-start);
+      padding: $padding;
+      border-top: 2px solid $grey-color;
+
+      input:first-child {
+        width: 100%;
+        border: none;
+      }
+
+      input:last-child {
+        color: $blue-color;
+        background-color: $white-color;
+        border: none;
+        font-weight: bold;
+        opacity: 0.5;
+      }
+    }
+  }
+  .main_right {
+    &_title {
+      @include flexSort(flex-start, center);
+      margin-bottom: calc($padding * 2);
+
+      ul {
+        padding-left: 0;
+      }
+    }
+
+    p {
+      color: $grey-dark-color;
+      font-size: $font-small;
+      font-weight: bold;
+    }
+    button {
+      color: $grey-dark-color;
+      font-weight: bold;
+    }
+
+    &_story {
+      height: 245px;
+      margin-bottom: calc($padding * 3);
+      background-color: $white-color;
+      border: 2px solid $grey-color;
+      border-radius: 5px;
+
+      .story_title {
+        @include flexSort(space-between, flex-start);
+        padding: $padding;
+      }
+
+      .story_user {
+        @include flexSort(flex-start, center);
+        padding: calc($padding/2) $padding;
+      }
+    }
+    &_recommend {
+      height: 200px;
+      background-color: $white-color;
+      border: 2px solid $grey-color;
+      border-radius: 5px;
+
+      .recommend_title {
+        @include flexSort(space-between, flex-start);
+        padding: $padding;
+      }
+    }
+
+    .recommend_user {
+      @include flexSort(flex-start, center);
+      padding: calc($padding/2) $padding;
+      margin: 0;
+    }
+  }
+}

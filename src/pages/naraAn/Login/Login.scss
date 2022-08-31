@@ -1,0 +1,138 @@
+/* Color */
+$white-color: #ffffff;
+$black-color: #030303;
+$blue-color: #0095f6;
+$blue-dark-color: #3b6088;
+$grey-light-color: #fafafa;
+$grey-color: #eaeaea;
+$grey-dark-color: #909090;
+$red-color: #ee4955;
+
+/* Size */
+$padding: 12px;
+$avatar-size: 40px;
+$avatar-small-size: 36px;
+
+/* Font Size */
+$font-large: 18px;
+$font-medium: 14px;
+$font-small: 12px;
+$font-micro: 10px;
+
+@mixin flexSort($justify, $alignItems) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+.list_style {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+input {
+  outline: none;
+}
+
+.title {
+  font-family: 'Lobster', cursive;
+}
+
+.user_img {
+  width: $avatar-small-size;
+  height: $avatar-small-size;
+  margin-right: $padding;
+  border: 1px solid $grey-color;
+  border-radius: 50%;
+}
+
+.user_name {
+  font-weight: bold;
+}
+
+.user_data {
+  margin-left: $padding;
+}
+
+.flex {
+  @include flexSort(space-between, flex-start);
+}
+
+.comment_style {
+  margin-left: $padding;
+  font-size: $font-medium;
+}
+
+.login_main {
+  @include flexSort(center, center);
+  height: 100vh;
+  background-color: $grey-light-color;
+
+  .login_form {
+    @include flexSort(center, center);
+    flex-direction: column;
+    width: 400px;
+    height: 450px;
+    background-color: $white-color;
+    border: 2px solid $grey-color;
+
+    .title {
+      font-size: calc($font-medium * 3);
+      margin-bottom: $padding * 2;
+    }
+
+    .login_input {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+
+      .input_style {
+        margin-bottom: calc($padding/2);
+        padding: $padding;
+        background-color: $grey-light-color;
+        border: 1px solid $grey-color;
+        border-radius: 5px;
+      }
+
+      .login_btn {
+        margin-top: $padding;
+        padding: calc($padding / 2);
+        border: 1px solid $blue-color;
+        color: $white-color;
+        background-color: $blue-color;
+        border-radius: 5px;
+        font-weight: bold;
+        opacity: 0.4;
+
+        &.active {
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .find_password {
+      margin-top: calc($padding * 8);
+      font-size: $font-medium;
+
+      button {
+        color: $blue-dark-color;
+      }
+    }
+  }
+}
