@@ -70,6 +70,7 @@ const Feeds = () => {
             여행가서 찍은 사진 올려 봅니다...
           </span>
         </li>
+
         {comments.map(value => (
           <Comment item={value} key={Math.random()} />
         ))}
