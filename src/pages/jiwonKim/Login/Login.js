@@ -23,6 +23,7 @@ function LoginJiwon() {
   const saveUserPw = e => {
     setPw(e.target.value);
   };
+  const isValid = id.includes('@') && pw.length >= 5;
 
   return (
     <div className="loginBody">
@@ -46,7 +47,11 @@ function LoginJiwon() {
             onChange={saveUserPw}
           />
 
-          <button className="loginButton" onClick={goToMain}>
+          <button
+            className="loginButton"
+            disabled={isValid ? false : true}
+            onClick={goToMain}
+          >
             로그인
           </button>
         </form>
