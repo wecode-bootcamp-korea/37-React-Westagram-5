@@ -20,11 +20,10 @@ function MainHoon() {
 
     if (comment.Text.trim() == '') {
       alert('댓글을 입력하세요.');
-      commentInputReference.current.value = '';
     } else {
       setComments([...comments, comment]);
-      commentInputReference.current.value = '';
     }
+    commentInputReference.current.value = '';
   };
 
   const deleteBtnHandelr = event => {};
