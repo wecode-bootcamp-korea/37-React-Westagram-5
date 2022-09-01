@@ -19,12 +19,16 @@ const Login = () => {
   function saveUserPw(e) {
     userPw(e.target.value);
   }
+
+  const vaildBtn = id.includes('@') && pw.length >= 5 ? false : true;
+
   return (
     <section className="login_main">
       <form className="login_form">
         <h1 className="title">Westagram</h1>
         <div className="login_input">
           <input
+            value={id}
             className="input_style"
             onChange={saveUserId}
             id="id"
@@ -32,6 +36,7 @@ const Login = () => {
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
+            value={pw}
             className="input_style"
             onChange={saveUserPw}
             id="password"
@@ -43,6 +48,7 @@ const Login = () => {
             onClick={goToMain}
             type="submit"
             value="로그인"
+            disabled={vaildBtn}
           />
         </div>
         <div className="find_password">
