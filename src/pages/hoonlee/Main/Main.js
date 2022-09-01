@@ -9,7 +9,6 @@ function MainHoon() {
   const [comments, setComments] = useState([]);
   const commentInputReference = useRef();
   const currentUser = 'noon_noo_nan_na';
-  let newcommentsForComponent = [];
 
   const commentSubmitHandler = event => {
     event.preventDefault();
@@ -19,9 +18,13 @@ function MainHoon() {
     comment.Text = commentInputReference.current.value;
     comment.Like = false;
 
-    setComments([...comments, comment]);
-
-    commentInputReference.current.value = '';
+    if (comment.Text.trim() == '') {
+      alert('댓글을 입력하세요.');
+      commentInputReference.current.value = '';
+    } else {
+      setComments([...comments, comment]);
+      commentInputReference.current.value = '';
+    }
   };
 
   const deleteBtnHandelr = event => {};
