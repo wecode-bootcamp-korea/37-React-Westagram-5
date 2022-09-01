@@ -1,15 +1,12 @@
 import React, { useRef, useState } from 'react';
 
-function ArticleCommentList({
-  comments,
-  commentsForComponent,
-  deleteBtnHandelr,
-}) {
-  const commentListReference = useRef;
+function ArticleCommentList({ comments, deleteBtnHandelr }) {
   const newcommentsForComponent = [];
+  let commentKey = 0;
+
   comments.map((value, index) => {
     newcommentsForComponent.push(
-      <div id={index} key={index}>
+      <div id={index} key={commentKey}>
         <div id="userContent" className="userContent">
           <div id="user" className="user">
             {value.User}
@@ -28,6 +25,7 @@ function ArticleCommentList({
         </div>
       </div>
     );
+    commentKey = commentKey + 1;
   });
 
   return (

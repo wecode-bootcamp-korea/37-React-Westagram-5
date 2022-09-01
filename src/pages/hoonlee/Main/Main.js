@@ -7,14 +7,12 @@ import './Main.scss';
 
 function MainHoon() {
   const [comments, setComments] = useState([]);
-  const [commentsForComponent, setcommentsForComponent] = useState([]);
   const commentInputReference = useRef();
   const currentUser = 'noon_noo_nan_na';
   let newcommentsForComponent = [];
 
   const commentSubmitHandler = event => {
     event.preventDefault();
-    const commentsCopied = comments;
     const comment = {};
 
     comment.User = currentUser;
@@ -37,7 +35,6 @@ function MainHoon() {
         <SearchBox />
         <Feeds
           comments={comments}
-          commentsForComponent={commentsForComponent}
           commentSubmitHandler={commentSubmitHandler}
           commentInputReference={commentInputReference}
           deleteBtnHandelr={deleteBtnHandelr}
