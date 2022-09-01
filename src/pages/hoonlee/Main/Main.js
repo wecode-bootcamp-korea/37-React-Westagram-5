@@ -18,7 +18,7 @@ function MainHoon() {
     comment.Text = commentInputReference.current.value;
     comment.Like = false;
 
-    if (comment.Text.trim() == '') {
+    if (comment.Text.trim() === '') {
       alert('댓글을 입력하세요.');
     } else {
       setComments([...comments, comment]);
