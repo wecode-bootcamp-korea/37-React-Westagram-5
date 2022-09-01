@@ -1,0 +1,566 @@
+@mixin display($flexDirection, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $flexDirection;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+nav {
+  background-color: #fcfcfc;
+  height: 59px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  .navContainer {
+    position: relative;
+    @include display(row, space-between, center);
+    width: 890px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 11.5px;
+
+    .navLeft {
+      display: flex;
+      align-items: center;
+    }
+
+    .navLeft .instagramImg {
+      height: 25px;
+      padding-right: 13px;
+      border-right: 2px solid black;
+    }
+
+    .navLeft .title {
+      font-family: 'Lobster', cursive;
+      font-size: 23px;
+      padding-left: 13px;
+    }
+
+    .navCenter {
+      width: 268px;
+      height: 36px;
+      @include display(row, null, center);
+      background-color: #efefef;
+      border-radius: 7px;
+    }
+
+    .navCenter img {
+      padding-left: 15px;
+    }
+
+    .navCenter input {
+      background-color: transparent;
+    }
+
+    .navCenter .searchImg {
+      height: 20px;
+    }
+
+    .navCenter .navInput {
+      width: 100%;
+      border: 0px;
+    }
+
+    .navCenter .navInput:focus {
+      outline: none;
+    }
+
+    .navRight {
+      @include display(row, null, center);
+    }
+
+    .navRight img {
+      height: 25px;
+      padding-right: 18px;
+      cursor: pointer;
+    }
+  }
+
+  .profileBox_hidden {
+    display: none;
+    z-index: 800;
+  }
+
+  .profileBox {
+    /* display: none; */
+    border: 1px #dbdbdb solid;
+    border-radius: 5px;
+    background-color: #f3f5f7;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    right: 9px;
+    top: 40px;
+    z-index: 800;
+
+    .profileBox_triangle {
+      position: absolute;
+      top: -25px;
+      right: 5px;
+      width: 30px;
+      /* border: 1px #dbdbdb solid; */
+      border-radius: 5px;
+      border-bottom: 15px solid #f3f5f7;
+      border-top: 15px solid transparent;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      z-index: 999;
+    }
+
+    .profileBox_content {
+      height: 100%;
+      @include display(column, space-between, null);
+    }
+
+    .profileBox_content div {
+      @include display(row, null, center);
+      margin-left: 10px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+      .container {
+        @include display(row, null, center);
+        border-top: 1px solid #dbdbdb;
+        padding-top: 5px;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+
+      div {
+        .logout {
+          margin-left: 10px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+
+        img {
+          width: 15px;
+          height: 15px;
+        }
+
+        .text {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+
+main {
+  margin-top: 59px;
+  background-color: #fafafa;
+  height: 100vh;
+  width: 100%;
+  @include display(row, center, null);
+
+  .searchBox {
+    position: absolute;
+    display: none;
+    // display: flex;
+    justify-content: center;
+    z-index: 999;
+
+    .searchTriangle {
+      position: fixed;
+      top: 32px;
+      width: 30px;
+      border: 1px #dbdbdb solid;
+      border-radius: 5px;
+      border-bottom: 15px solid #f3f5f7;
+      border-top: 15px solid transparent;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      z-index: 999;
+    }
+
+    .searchList {
+      background-color: #f3f5f7;
+      /* position: fixed; */
+      height: 300px;
+      width: 300px;
+      border: 1px #dbdbdb solid;
+      border-radius: 5px;
+      overflow-y: scroll;
+      @include display(row, null, null);
+
+      .noPerson {
+        margin-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      div .filterdUser {
+        margin-top: 3px;
+        margin-left: 8px;
+        @include display(row, null, center);
+        margin-bottom: 1px gray solid;
+      }
+
+      div {
+        .filterdUser .filteredUserText {
+          margin-left: 25px;
+        }
+
+        .filterdUser .filteredUserText .id {
+          font-weight: 900;
+        }
+
+        .filterdUser .filteredUserText .description {
+          color: gray;
+        }
+
+        .filterdUser img {
+          height: 25px;
+          width: 25px;
+        }
+      }
+    }
+  }
+  .feeds {
+    background-color: #ffffff;
+    min-width: 470px;
+    margin-right: 32px;
+    margin-top: 45px;
+    position: relative;
+
+    .article {
+      background-color: ffffff;
+      border: 1px #dbdbdb solid;
+      border-radius: 4px;
+
+      .article_header {
+        @include display(row, null, center);
+        background-color: ffffff;
+        height: 50px;
+
+        img {
+          height: 35px;
+          width: 35px;
+          margin-left: 15px;
+          border-radius: 50%;
+        }
+
+        .identifier {
+          margin-left: 10px;
+          font-size: 15px;
+          font-weight: 500;
+        }
+      }
+
+      .article_body {
+        width: 100%;
+        background-color: none;
+
+        img {
+          width: 470px;
+        }
+      }
+
+      .article_footer {
+        width: 100%;
+        height: 40px;
+        background-color: transparent;
+        @include display(row, space-between, center);
+
+        .article_footer_left {
+          img {
+            height: 24px;
+            width: 24px;
+            margin-left: 5px;
+          }
+        }
+
+        .article_footer_right {
+          img {
+            height: 24px;
+            width: 24px;
+            margin-right: 5px;
+          }
+        }
+      }
+
+      .article_like {
+        width: 100%;
+        height: 30px;
+        background-color: transparent;
+        @include display(row, null, center);
+
+        img {
+          width: 20px;
+          height: 20px;
+          margin-left: 5px;
+          border-radius: 50%;
+        }
+
+        .article_like_comment {
+          font-size: 14px;
+          margin-left: 5px;
+        }
+      }
+
+      .article_comment {
+        @include display(column, null, null);
+        background-color: transparent;
+        margin-top: 8px;
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 14px;
+        transition: all 0.5s ease-in-out;
+
+        div {
+          @include display(row, space-between, null);
+          margin-top: 5px;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            .likeDelete {
+              .deleteBtn {
+                opacity: 100%;
+              }
+            }
+          }
+
+          .userContent {
+            .user {
+              font-weight: 900;
+            }
+            .content {
+              margin-left: 10px;
+            }
+          }
+          .likeDelete {
+            .deleteBtn {
+              margin-top: 6.5px;
+              margin-right: 6px;
+              cursor: pointer;
+              opacity: 0%;
+              font-size: 9px;
+            }
+            .likeBtn {
+              margin-right: 5px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .article_like_comment {
+        span {
+          font-weight: 900;
+        }
+      }
+
+      .article_comment_input {
+        height: 40px;
+        @include display(row, space-between, center);
+        padding-left: 5px;
+        margin-top: 10px;
+        border-top: 1px solid #dbdbdb;
+
+        form {
+          width: 90%;
+          justify-content: space-between;
+        }
+
+        input {
+          border: none;
+          width: 100%;
+        }
+
+        input:focus {
+          outline: none;
+        }
+
+        .article_comment_gesi {
+          margin-right: 5px;
+          font-size: 13px;
+          color: skyblue;
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .main-right {
+    background-color: transparent;
+    height: 700px;
+    width: 319px;
+    min-width: 319px;
+    margin-right: 16px;
+    margin-bottom: 30px;
+    margin-top: 45px;
+
+    .main-right_header {
+      background-color: transparent;
+      height: 60px;
+      @include display(row, null, center);
+      margin-left: 7px;
+
+      img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+      }
+
+      .main-right_header_comment {
+        margin-left: 9px;
+        font-size: 13px;
+
+        .main-right_header_comment_top {
+          font-weight: 900;
+        }
+
+        .main-right_header_comment_bottom {
+          @include display(row, null, center);
+          height: 10px;
+          font-size: 15px;
+          color: gray;
+          margin-top: 5px;
+
+          .main-right_header_comment_bottom_Eng {
+            border-right: 2px solid gray;
+            padding-right: 3px;
+          }
+
+          .main-right_header_comment_bottom_Kor {
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+
+    .main-right_story {
+      background-color: white;
+      height: 200px;
+      margin-left: 7px;
+      margin-right: 7px;
+      border: 1px solid #dbdbdb;
+      border-radius: 2px;
+
+      .main-right_story_header {
+        @include display(row, space-between, center);
+        margin: 0px 7px;
+        padding-top: 12px;
+
+        .main-right_story_title {
+          font-size: 13px;
+          color: gray;
+          padding-top: 2px;
+        }
+
+        .main-right_story_viewAll {
+          font-size: 15px;
+          font-weight: 700;
+        }
+      }
+
+      .main-right_story_body {
+        height: 168px;
+        overflow-y: scroll;
+        margin-left: 7px;
+
+        .userInfo {
+          height: 30px;
+          margin-top: 12px;
+          @include display(row, null, center);
+
+          img {
+            width: 30px;
+            height: 30px;
+            border: 0.5px solid red;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+
+          .content {
+            .ID {
+              font-size: 12px;
+              font-weight: 700;
+            }
+            .time {
+              font-size: 15px;
+              color: gray;
+            }
+          }
+        }
+      }
+    }
+
+    .main-right_recommand {
+      margin-top: 12px;
+      background-color: white;
+      margin-left: 7px;
+      margin-right: 7px;
+      padding-bottom: 7px;
+      border: 1px solid #dbdbdb;
+      border-radius: 2px;
+
+      .main-right_recommand_header {
+        @include display(row, space-between, center);
+        margin: 0px 7px;
+        padding-top: 12px;
+
+        .main-right_recommand_title {
+          font-size: 13px;
+          color: gray;
+          padding-top: 2px;
+        }
+
+        .main-right_recommand_viewAll {
+          font-size: 15px;
+          font-weight: 700;
+        }
+      }
+
+      .main-right_recommand_body {
+        margin-left: 7px;
+
+        .userInfo {
+          height: 30px;
+          margin-top: 12px;
+          @include display(row, null, center);
+
+          img {
+            width: 30px;
+            height: 30px;
+            border: 0.5px solid red;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+
+          .content {
+            .ID {
+              font-size: 12px;
+              font-weight: 700;
+            }
+
+            .commant {
+              font-size: 11px;
+              color: gray;
+            }
+          }
+        }
+      }
+    }
+
+    .main-right_footer {
+      display: flex;
+      flex-direction: column;
+      color: gray;
+      margin: 0px 7px;
+
+      .main-right_footer_info {
+        margin-top: 20px;
+        font-size: 12px;
+      }
+
+      .main-right_footer_brand {
+        margin-top: 15px;
+        font-size: 14px;
+      }
+    }
+  }
+}
