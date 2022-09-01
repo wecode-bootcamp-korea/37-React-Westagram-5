@@ -17,11 +17,11 @@ function LoginHoon() {
   };
 
   const saveUserId = event => {
-    setInputId(currentInputId => (currentInputId = event.target.value));
+    setInputId(currentInputId => (currentInputId = event.target.value.trim()));
   };
 
   const saveUserPw = event => {
-    setInputPw(currentInputPw => (currentInputPw = event.target.value));
+    setInputPw(currentInputPw => (currentInputPw = event.target.value.trim()));
   };
 
   // console.log('isLoginBtnDisable : ', isLoginBtnDisable);
