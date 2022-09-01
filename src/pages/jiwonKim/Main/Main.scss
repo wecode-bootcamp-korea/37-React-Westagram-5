@@ -3,15 +3,15 @@
 .mainContainer {
   display: flex;
   justify-content: center;
-}
 
-.mainBody {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 16px;
-  padding-top: 40px;
+  .mainBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 40px;
+  }
 }
 
 .feedsContainer {
@@ -23,117 +23,117 @@
   background-color: white;
   min-width: 400px;
   padding: 5px;
-}
 
-.feedsHeader {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  .feedsHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-  height: 40px;
-  padding: 0 10px;
-  gap: 10px;
+    height: 40px;
+    padding: 0 10px;
+    gap: 10px;
 
-  span {
-    font-weight: 600;
+    span {
+      font-weight: 600;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
   }
 
-  img {
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
-    border-radius: 15px;
-  }
-}
-
-.feedImage {
-  width: 100%;
-  height: 400px;
-}
-
-.reactionIcons {
-  display: flex;
-  margin: 5px 5px;
-  justify-content: space-between;
-
-  img {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-.reactionIconsLeft {
-  display: flex;
-  gap: 10px;
-}
-
-.howManyLikes {
-  display: flex;
-  align-items: center;
-  padding: 5px 0 5px 5px;
-  gap: 5px;
-
-  img {
-    width: 20px;
-    height: 20px;
-    border: 1px solid gray;
-    border-radius: 10px;
-  }
-}
-
-.commentsBox {
-  padding-left: 10px;
-}
-
-.comment {
-  margin-bottom: 5px;
-  max-width: 380px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: flex;
-  align-items: center;
-}
-
-.commentId {
-  font-weight: 700;
-  margin-right: 10px;
-}
-
-.commentSaying {
-  width: 250px;
-  max-height: 1em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.timePassed {
-  color: gray;
-  margin-top: 5px;
-}
-
-.commentInputBox {
-  display: flex;
-  padding: 12px;
-  border-top: 1px solid #e6e6e6;
-
-  input {
-    all: unset;
-    flex: 2;
+  .feedImage {
+    width: 100%;
+    height: 400px;
   }
 
-  button {
-    all: unset;
-    width: 10%;
-    color: #cce4fc;
-    text-align: center;
+  .reactionIcons {
+    display: flex;
+    margin: 5px 5px;
+    justify-content: space-between;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .reactionIconsLeft {
+      display: flex;
+      gap: 10px;
+    }
   }
-}
 
-.commentInput {
-  width: 90%;
+  .howManyLikes {
+    display: flex;
+    align-items: center;
+    padding: 5px 0 5px 5px;
+    gap: 5px;
 
-  ::placeholder {
+    img {
+      width: 20px;
+      height: 20px;
+      border: 1px solid gray;
+      border-radius: 10px;
+    }
+  }
+
+  .commentsBox {
+    padding-left: 10px;
+  }
+
+  .comment {
+    margin-bottom: 5px;
+    max-width: 380px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+
+    .commentId {
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .commentSaying {
+      width: 250px;
+      max-height: 1em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .timePassed {
     color: gray;
+    margin-top: 5px;
+  }
+
+  .commentInputBox {
+    display: flex;
+    padding: 12px;
+    border-top: 1px solid #e6e6e6;
+
+    input {
+      all: unset;
+      flex: 2;
+    }
+
+    button {
+      all: unset;
+      width: 10%;
+      color: #cce4fc;
+      text-align: center;
+    }
+
+    .commentInput {
+      width: 90%;
+
+      ::placeholder {
+        color: gray;
+      }
+    }
   }
 }
 
@@ -149,32 +149,44 @@
   max-width: 400px;
   padding: 10px;
   gap: 20px;
-}
 
-.mainRightProfile {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  .mainRightProfile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-  img {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    object-fit: cover;
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      object-fit: cover;
+    }
   }
-}
+  .mainRightUserInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
 
-.mainRightUserInfo {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
+    span:nth-child(1) {
+      font-weight: 700;
+    }
 
-  span:nth-child(1) {
-    font-weight: 700;
+    span:nth-child(2) {
+      color: #afafaf;
+    }
   }
 
-  span:nth-child(2) {
-    color: #afafaf;
+  .story {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+
+    .storyUploadUsersWrap {
+      max-height: 300px;
+      overflow-y: scroll;
+    }
   }
 }
 
@@ -193,64 +205,51 @@
   }
 }
 
-.story {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border: 1px solid #e6e6e6;
-  padding: 10px;
-}
-
-.storyUploadUsersWrap {
-  max-height: 300px;
-  overflow-y: scroll;
-}
-
 .recommend {
   display: flex;
   flex-direction: column;
   background-color: white;
   border: 1px solid #e6e6e6;
   padding: 10px;
-}
 
-.recommendedUser {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-}
+  .recommendedUser {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
 
-.recommendedUserLeft {
-  display: flex;
-}
+    .recommendedUserLeft {
+      display: flex;
+    }
 
-.recommendedUserImg {
-  width: 36px;
-  height: 36px;
-  border-radius: 18px;
-  object-fit: cover;
-}
+    .recommendedUserImg {
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      object-fit: cover;
+    }
 
-.recommendedUserInfo {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  margin-left: 10px;
+    .recommendedUserInfo {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+      margin-left: 10px;
 
-  span:nth-child(1) {
-    font-weight: 900;
+      span:nth-child(1) {
+        font-weight: 900;
+      }
+
+      span:nth-child(2) {
+        color: #afafaf;
+      }
+    }
+
+    .recommendedUserFollow {
+      color: #3798f0;
+      font-weight: 600;
+      margin-right: 10px;
+    }
   }
-
-  span:nth-child(2) {
-    color: #afafaf;
-  }
-}
-
-.recommendedUserFollow {
-  color: #3798f0;
-  font-weight: 600;
-  margin-right: 10px;
 }
 
 .mainRightFooter {
@@ -274,53 +273,53 @@
   position: fixed;
   width: 100%;
   top: 0;
-}
 
-.navLeft {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 
-  span {
-    font-family: 'Lobster', cursive;
-    font-size: 16px;
-    font-weight: 900;
-    transform: none;
-    -webkit-transform: scale(1, 1.5);
+    span {
+      font-family: 'Lobster', cursive;
+      font-size: 16px;
+      font-weight: 900;
+      transform: none;
+      -webkit-transform: scale(1, 1.5);
+    }
   }
-}
 
-.navInput {
-  background-color: #fafafa;
-  border: 1px solid #dbdbdb;
-  border-radius: 2px;
-  width: 100%;
-  height: 24px;
-  padding-left: 10px;
-  display: flex;
-  position: relative;
-  width: 33%;
-  align-items: center;
+  .navInput {
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 2px;
+    width: 100%;
+    height: 24px;
+    padding-left: 10px;
+    display: flex;
+    position: relative;
+    width: 33%;
+    align-items: center;
 
-  &::placeholder {
-    text-align: center;
+    &::placeholder {
+      text-align: center;
+    }
   }
 }
 
 .navRight {
   display: flex;
   gap: 14px;
+
+  .profileImg {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+  }
 }
 
 .icon {
   width: 24px;
   height: 24px;
-}
-
-.profileImg {
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
 }
 
 // story Upload user
@@ -329,25 +328,25 @@
   display: flex;
   align-items: center;
   padding: 10px;
-}
 
-.storyUploadUserImg {
-  width: 36px;
-  height: 36px;
-  border-radius: 18px;
-  object-fit: cover;
-}
-
-.storyUploadUserInfo {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  margin-left: 10px;
-
-  span:nth-child(1) {
-    font-weight: 900;
+  .storyUploadUserImg {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    object-fit: cover;
   }
-  span:nth-child(2) {
-    color: #afafaf;
+
+  .storyUploadUserInfo {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-left: 10px;
+
+    span:nth-child(1) {
+      font-weight: 900;
+    }
+    span:nth-child(2) {
+      color: #afafaf;
+    }
   }
 }

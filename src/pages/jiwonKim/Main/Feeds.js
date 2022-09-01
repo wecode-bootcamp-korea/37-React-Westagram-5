@@ -16,10 +16,13 @@ const Feeds = () => {
     setComment(e.target.value);
   };
 
+  const commentValid = comment.trim().length > 0;
+
   const commentSubmit = e => {
     e.preventDefault();
-    setComments(cur => [comment, ...cur]);
-    setComment('');
+    return commentValid
+      ? (setComments(prev => [comment, ...prev]), setComment(''))
+      : setComments(comments);
   };
 
   return (
@@ -70,9 +73,8 @@ const Feeds = () => {
             여행가서 찍은 사진 올려 봅니다...
           </span>
         </li>
-
-        {comments.map(value => (
-          <Comment item={value} key={Math.random()} />
+        {comments.map((value, index) => (
+          <Comment item={value} key={index} />
         ))}
         <span className="timePassed">0초 전</span>
       </ul>

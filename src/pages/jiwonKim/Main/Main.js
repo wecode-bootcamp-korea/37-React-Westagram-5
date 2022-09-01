@@ -12,7 +12,7 @@ import MainRight from './MainRight';
 function MainJiwon() {
   return (
     <div className="mainContainer">
-      <Navibar item="안녕하세요" />
+      <Navibar />
       <div className="mainBody">
         <Feeds />
         <MainRight />
