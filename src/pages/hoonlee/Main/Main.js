@@ -28,7 +28,7 @@ function MainHoon() {
 
   const deleteBtnHandelr = event => {};
 
-  console.log(comments);
+  // console.log(comments);
 
   return (
     <>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function Btn({ goToMain, isLoginBtnDisable }) {
-  console.log('isLoginBtnDisable : ', isLoginBtnDisable);
+  // console.log('isLoginBtnDisable : ', isLoginBtnDisable);
 
   const BtnClassName =
     isLoginBtnDisable === true ? 'buttonDisable' : 'buttonAble';
