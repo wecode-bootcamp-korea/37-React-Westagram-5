@@ -8,14 +8,11 @@ import Comment from './Comment';
 
 const Feeds = () => {
   const altMsg = '이미지 오류';
-
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
-
   const handleCommentChange = e => {
     setComment(e.target.value);
   };
-
   const commentValid = comment.trim().length > 0;
 
   const commentSubmit = e => {
