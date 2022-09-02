@@ -12,6 +12,7 @@ function Feeds({
   commentSubmitHandler,
   commentInputReference,
   deleteBtnHandelr,
+  likeBtnHandler,
 }) {
   return (
     <div className="feeds">
@@ -24,6 +25,7 @@ function Feeds({
           comments={comments}
           commentsForComponent={commentsForComponent}
           deleteBtnHandelr={deleteBtnHandelr}
+          likeBtnHandler={likeBtnHandler}
         />
         <ArticleCommentInput
           commentSubmitHandler={commentSubmitHandler}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ArticleCommentList({ comments, deleteBtnHandelr }) {
+function ArticleCommentList({ comments, deleteBtnHandelr, likeBtnHandler }) {
   const newcommentsForComponent = [];
   let commentKey = 0;
 
@@ -19,8 +19,8 @@ function ArticleCommentList({ comments, deleteBtnHandelr }) {
           <div id="deleteBtn" className="deleteBtn" onClick={deleteBtnHandelr}>
             DEL
           </div>
-          <div id="likeBtn" className="likeBtn">
-            ♡
+          <div id="likeBtn" className="likeBtn" onClick={likeBtnHandler}>
+            {comments[index].Like === true ? '♥️' : '♡'}
           </div>
         </div>
       </div>

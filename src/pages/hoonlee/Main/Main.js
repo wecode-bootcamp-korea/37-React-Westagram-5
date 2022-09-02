@@ -26,9 +26,18 @@ function MainHoon() {
     commentInputReference.current.value = '';
   };
 
-  const deleteBtnHandelr = event => {};
+  const deleteBtnHandelr = event => {
+    const selectedCommentId = event.nativeEvent.path[2].id;
+    comments.splice(selectedCommentId, 1);
+    setComments([...comments]);
+  };
 
-  // console.log(comments);
+  const likeBtnHandler = event => {
+    const selectedCommentId = event.nativeEvent.path[2].id;
+    comments[selectedCommentId].Like = !comments[selectedCommentId].Like;
+
+    setComments([...comments]);
+  };
 
   return (
     <>
@@ -40,6 +49,7 @@ function MainHoon() {
           commentSubmitHandler={commentSubmitHandler}
           commentInputReference={commentInputReference}
           deleteBtnHandelr={deleteBtnHandelr}
+          likeBtnHandler={likeBtnHandler}
         />
         <MainRight />
       </main>
