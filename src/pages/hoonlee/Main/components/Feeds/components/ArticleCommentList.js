@@ -4,7 +4,7 @@ function ArticleCommentList({ comments, deleteBtnHandelr }) {
   const newcommentsForComponent = [];
   let commentKey = 0;
 
-  comments.foreach((value, index) => {
+  comments.forEach((value, index) => {
     newcommentsForComponent.push(
       <div id={index} key={commentKey}>
         <div id="userContent" className="userContent">
