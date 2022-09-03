@@ -213,7 +213,10 @@ main {
         background-color: $white-color;
         border: none;
         font-weight: bold;
-        opacity: 0.5;
+
+        &:disabled {
+          opacity: 0.4;
+        }
       }
     }
   }

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import CommentList from './components/CommentList';
 import './Main.scss';
 
 function Main() {
   const [container, setContainer] = useState([]);
-  const [comment, setComment] = useState([]);
-  const commentId = 'wecode_37th';
+  const [comment, setComment] = useState('');
+  const vaildBtn = comment.length > 0 ? false : true;
 
   function getValue(event) {
     event.preventDefault();
@@ -107,16 +108,8 @@ function Main() {
                   </li>
                 </ul>
                 <ul>
-                  {container.map((value, i) => {
-                    return (
-                      <li key={i}>
-                        <span className="user_name">{commentId}</span>
-                        <span className="comment_style">{value}</span>
-                      </li>
-                    );
-                  })}
+                  <CommentList container={container} />
                 </ul>
-
                 <p>42분 전</p>
               </div>
             </div>
@@ -129,7 +122,12 @@ function Main() {
                   className="comment_input"
                   placeholder="댓글달기..."
                 />
-                <input id="comment_btn" type="submit" value="게시" />
+                <input
+                  id="comment_btn"
+                  type="submit"
+                  value="게시"
+                  disabled={vaildBtn}
+                />
               </form>
             </footer>
           </article>
