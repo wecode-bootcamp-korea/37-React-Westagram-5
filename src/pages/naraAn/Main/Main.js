@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.scss';
 
 function Main() {
+  const [container, setContainer] = useState([]);
+  const [comment, setComment] = useState('');
+  const commentId = 'nariiiii';
+
+  function getValue(event) {
+    event.preventDefault();
+    setComment(event.target.value);
+  }
+
+  function addComment(e) {
+    e.preventDefault();
+    setContainer([...container, comment]);
+    setComment('');
+  }
+
   return (
     <>
       <nav className="nav">
@@ -91,13 +106,25 @@ function Main() {
                     <button>더보기</button>
                   </li>
                 </ul>
-                <div id="new_comment_location" />
+                <ul>
+                  {container.map(value => {
+                    return (
+                      <li>
+                        <span className="user_name">{commentId}</span>
+                        <span className="comment_style">{value}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+
                 <p>42분 전</p>
               </div>
             </div>
             <footer>
-              <form id="comment_write">
+              <form onSubmit={addComment} id="comment_write">
                 <input
+                  value={comment}
+                  onChange={getValue}
                   type="text"
                   className="comment_input"
                   placeholder="댓글달기..."
