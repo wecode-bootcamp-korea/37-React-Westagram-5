@@ -3,8 +3,8 @@ import './Main.scss';
 
 function Main() {
   const [container, setContainer] = useState([]);
-  const [comment, setComment] = useState('');
-  const commentId = 'nariiiii';
+  const [comment, setComment] = useState([]);
+  const commentId = 'wecode_37th';
 
   function getValue(event) {
     event.preventDefault();
@@ -107,9 +107,9 @@ function Main() {
                   </li>
                 </ul>
                 <ul>
-                  {container.map(value => {
+                  {container.map((value, i) => {
                     return (
-                      <li>
+                      <li key={i}>
                         <span className="user_name">{commentId}</span>
                         <span className="comment_style">{value}</span>
                       </li>
