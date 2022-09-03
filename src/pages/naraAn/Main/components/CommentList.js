@@ -2,10 +2,11 @@ import React from 'react';
 import Comment from './Comment';
 
 function CommentList(props) {
+  const { container } = props;
   return (
     <>
-      {props.container.map((item, index) => (
-        <Comment key={index} text={item} />
+      {container.map((item, index) => (
+        <Comment key={index} item={item} />
       ))}
     </>
   );

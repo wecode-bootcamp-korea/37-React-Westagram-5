@@ -1,12 +1,10 @@
 import React from 'react';
 
-function Comment(props) {
+function Comment({ item }) {
   return (
     <li>
       <span className="user_name">wecode_37th</span>
-      <span key={props.index} className="comment_style">
-        {props.text}
-      </span>
+      <span className="comment_style">{item}</span>
     </li>
   );
 }
