@@ -5,6 +5,7 @@ import './Main.scss';
 function Main() {
   const [container, setContainer] = useState([]);
   const [comment, setComment] = useState('');
+  const [id, setId] = useState(0);
   const vaildBtn = comment.length > 0 ? false : true;
 
   function getValue(event) {
@@ -14,7 +15,8 @@ function Main() {
 
   function addComment(e) {
     e.preventDefault();
-    setContainer([...container, comment]);
+    setContainer([...container, { key: id, item: comment }]);
+    setId(id + 1);
     setComment('');
   }
 

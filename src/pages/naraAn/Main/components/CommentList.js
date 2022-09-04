@@ -5,8 +5,8 @@ function CommentList(props) {
   const { container } = props;
   return (
     <>
-      {container.map((item, index) => (
-        <Comment key={index} item={item} />
+      {container.map(value => (
+        <Comment key={value.key} item={value.item} />
       ))}
     </>
   );
