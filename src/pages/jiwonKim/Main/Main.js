@@ -2,7 +2,6 @@ import React from 'react';
 
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
-
 import './Main.scss';
 
 import Navibar from './Navibar';

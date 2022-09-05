@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
@@ -13,17 +13,15 @@ function LoginJiwon() {
     navigate('/main-jiwon');
   };
 
-  const [id, setId] = useState('');
-  const [pw, setPw] = useState('');
+  const [userInput, setUserInput] = useState({ email: '', password: '' });
 
-  const saveUserId = e => {
-    setId(e.target.value);
+  const saveUserInput = e => {
+    const { name, value } = e.target;
+    setUserInput({ ...userInput, [name]: value });
   };
 
-  const saveUserPw = e => {
-    setPw(e.target.value);
-  };
-  const isValid = id.includes('@') && pw.length >= 5;
+  const isValid =
+    userInput.email.includes('@') && userInput.password.length >= 5;
 
   return (
     <div className="loginBody">
@@ -34,31 +32,31 @@ function LoginJiwon() {
         <form className="loginBox">
           <input
             className="input"
-            id="id"
+            name="email"
             type="email"
             placeholder="전화번호, 사용자 이름 또는 이메일"
-            onChange={saveUserId}
+            onChange={saveUserInput}
           />
           <input
             className="input"
-            id="password"
+            name="password"
             type="password"
             placeholder="비밀번호"
-            onChange={saveUserPw}
+            onChange={saveUserInput}
           />
 
           <button
             className="loginButton"
-            disabled={isValid ? false : true}
+            disabled={!isValid}
             onClick={goToMain}
           >
             로그인
           </button>
         </form>
         <div className="loginFooter">
-          <a href="https://www.naver.com">
+          <Link to="!">
             <p>비밀번호를 잊으셨나요?</p>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

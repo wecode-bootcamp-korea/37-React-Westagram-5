@@ -103,6 +103,13 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
+    img {
+      height: 1em;
+    }
+    button {
+      all: unset;
+    }
   }
 
   .timePassed {

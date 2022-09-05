@@ -10,16 +10,22 @@ const Feeds = () => {
   const altMsg = '이미지 오류';
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
+  const [contentId, setContentId] = useState(1);
+
   const handleCommentChange = e => {
-    setComment(e.target.value);
+    setComment({ id: contentId, content: e.target.value });
   };
-  const commentValid = comment.trim().length > 0;
+  // const commentValid = comment.content.length > 0;
 
   const commentSubmit = e => {
     e.preventDefault();
-    return commentValid
-      ? (setComments(prev => [comment, ...prev]), setComment(''))
-      : setComments(comments);
+    setComments(prev => [comment, ...prev]);
+    setContentId(prev => prev + 1);
+    setComment({ id: contentId + 1, content: '' });
+  };
+
+  const handleXClick = e => {
+    setComments(comments.filter(item => item.id !== e.id));
   };
 
   return (
@@ -38,18 +44,9 @@ const Feeds = () => {
       />
       <div className="reactionIcons">
         <div className="reactionIconsLeft">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
-            alt={altMsg}
-          />
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/7205/7205744.png"
-            alt={altMsg}
-          />
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/2956/2956783.png"
-            alt={altMsg}
-          />
+          {iconImages.map((e, i) => (
+            <img src={e} alt={altMsg} key={i} />
+          ))}
         </div>
         <img
           src="https://cdn-icons-png.flaticon.com/512/2990/2990295.png"
@@ -70,8 +67,13 @@ const Feeds = () => {
             여행가서 찍은 사진 올려 봅니다...
           </span>
         </li>
-        {comments.map((value, index) => (
-          <Comment item={value} key={index} />
+        {comments.map(e => (
+          <Comment
+            key={e.id}
+            id={e.id}
+            content={e.content}
+            onClick={() => handleXClick(e)}
+          />
         ))}
         <span className="timePassed">0초 전</span>
       </ul>
@@ -80,7 +82,7 @@ const Feeds = () => {
           className="commentInput"
           placeholder="댓글 쓰기..."
           onChange={handleCommentChange}
-          value={comment}
+          value={comment.content || ''}
         />
         <button>게시</button>
       </form>
@@ -89,3 +91,9 @@ const Feeds = () => {
 };
 
 export default Feeds;
+
+const iconImages = [
+  'https://cdn-icons-png.flaticon.com/512/1077/1077035.png',
+  'https://cdn-icons-png.flaticon.com/512/7205/7205744.png',
+  'https://cdn-icons-png.flaticon.com/512/2956/2956783.png',
+];
