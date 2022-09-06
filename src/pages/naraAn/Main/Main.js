@@ -3,6 +3,7 @@ import CommentList from './components/CommentList';
 import Comment from './components/Comment';
 import FeedIcons from './components/feedIcons';
 import RecommendUser from './components/RecommendUser';
+import Nav from '../../../components/Nav/Nav';
 import StoryUser from './components/StoryUser';
 
 import './Main.scss';
@@ -29,33 +30,7 @@ function Main() {
 
   return (
     <>
-      <nav className="nav">
-        <div className="nav_logoAndTitle">
-          <i className="fa-brands fa-instagram" />
-          <span className="title">Westagram</span>
-        </div>
-        <form className="nav_search">
-          <input type="text" className="input_style" />
-          <i className="fa-solid fa-magnifying-glass search-icon"> 검색</i>
-        </form>
-        <ul className="nav_icons">
-          <li>
-            <button>
-              <i className="fa-regular fa-compass" />
-            </button>
-          </li>
-          <li>
-            <button>
-              <i className="fa-regular fa-heart" />
-            </button>
-          </li>
-          <li>
-            <button>
-              <i className="fa-regular fa-user" />
-            </button>
-          </li>
-        </ul>
-      </nav>
+      <Nav />
       <main>
         <div className="feeds">
           <article>
