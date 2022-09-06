@@ -8,7 +8,7 @@ function NavLeft(props) {
         src="./images/hoonlee/instagram.png"
         alt="인스타그램그림"
       />
-      <h1 className="title">Hoonstagram</h1>
+      <h1 className="title">Wetagram</h1>
     </div>
   );
 }
