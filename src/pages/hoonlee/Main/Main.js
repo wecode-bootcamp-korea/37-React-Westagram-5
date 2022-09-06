@@ -1,7 +1,8 @@
 import React from 'react';
+import Nav from '../../../components/Nav/Nav';
 
 function MainHoon() {
-  return <h1>hoonMain</h1>;
+  return <Nav />;
 }
 
 export default MainHoon;
