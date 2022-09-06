@@ -145,7 +145,7 @@ main {
     border-radius: 5px;
 
     &_header {
-      @include flexSort(space-between, flex-start);
+      @include flexSort(space-between, center);
       padding: $padding;
 
       .user_data {
@@ -236,7 +236,7 @@ main {
       font-weight: bold;
     }
     button {
-      color: $grey-dark-color;
+      color: $blue-color;
       font-weight: bold;
     }
 

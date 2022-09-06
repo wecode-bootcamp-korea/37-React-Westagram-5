@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import CommentList from './components/CommentList';
+import Comment from './components/Comment';
+import FeedIcons from './components/feedIcons';
+import RecommendUser from './components/RecommendUser';
+import StoryUser from './components/StoryUser';
+
 import './Main.scss';
 
 function Main() {
   const [container, setContainer] = useState([]);
   const [comment, setComment] = useState('');
   const [id, setId] = useState(0);
+  const userId = 'nariiiii';
+  const userWecode = 'wecode_37th';
   const vaildBtn = comment.length > 0 ? false : true;
 
   function getValue(event) {
@@ -15,7 +22,7 @@ function Main() {
 
   function addComment(e) {
     e.preventDefault();
-    setContainer([...container, { key: id, item: comment }]);
+    setContainer([...container, { key: id, item: comment, id: userWecode }]);
     setId(id + 1);
     setComment('');
   }
@@ -57,9 +64,9 @@ function Main() {
                 <img
                   className="user_img"
                   alt="character"
-                  src="../../../../images/naraAn/tomung.jpeg"
+                  src="../../../../images/naraAn/profile/tomung.jpeg"
                 />
-                <span className="user_name">nariiiii</span>
+                <span className="user_name">{userId}</span>
               </div>
               <button>
                 <i className="fa-solid fa-ellipsis" />
@@ -73,38 +80,18 @@ function Main() {
                 />
               </span>
               <div className="feed_contents">
-                <ul className="feed_icons">
-                  <li>
-                    <button>
-                      <i className="fa-regular fa-heart" />
-                    </button>
-                    <button>
-                      <i className="fa-regular fa-comment" />
-                    </button>
-                    <button>
-                      <i className="fa-regular fa-paper-plane" />
-                    </button>
-                  </li>
-                  <li>
-                    <button>
-                      <i className="fa-regular fa-bookmark" />
-                    </button>
-                  </li>
-                </ul>
+                <FeedIcons />
                 <div className="feed_likes">
                   <img
                     className="user_img"
                     alt="minions"
-                    src="../../../../images/naraAn/minions.jpg"
+                    src="../../../../images/naraAn/profile/minions.jpg"
                   />
                   <span className="user_name">minions</span>
                   <span>님 외 10명이 좋아합니다</span>
                 </div>
                 <ul className="feed_text">
-                  <li>
-                    <span className="user_name">nariiiii</span>
-                    <span className="comment_style">여행가고 싶다 🥲</span>
-                  </li>
+                  <Comment id={userId} item="여행가고 싶다 🥲" />
                   <li>
                     <button>더보기</button>
                   </li>
@@ -121,15 +108,9 @@ function Main() {
                   value={comment}
                   onChange={getValue}
                   type="text"
-                  className="comment_input"
                   placeholder="댓글달기..."
                 />
-                <input
-                  id="comment_btn"
-                  type="submit"
-                  value="게시"
-                  disabled={vaildBtn}
-                />
+                <input type="submit" value="게시" disabled={vaildBtn} />
               </form>
             </footer>
           </article>
@@ -139,120 +120,26 @@ function Main() {
             <img
               className="user_img"
               alt="duck"
-              src="../../../../images/naraAn/duck.jpg"
+              src="../../../../images/naraAn/profile/duck.jpg"
             />
-            <ul>
-              <li id="user_wecode" className="user_name">
-                wecode_37th
-              </li>
-              <li>
-                <p>wecode | 위코드</p>
-              </li>
-            </ul>
+            <di>
+              <span className="user_name">{userWecode}</span>
+              <p>wecode | 위코드</p>
+            </di>
           </header>
           <div className="main_right_story">
             <div className="story_title">
               <p>스토리</p>
-              <button>모두보기</button>
+              <p>모두보기</p>
             </div>
-            <div className="story_user">
-              <img
-                alt="minions"
-                src="../../../../images/naraAn/minions.jpg"
-                className="user_img"
-              />
-              <div className="user_data">
-                <span className="user_name">minions</span>
-                <p className="time">10분 전</p>
-              </div>
-            </div>
-            <div className="story_user">
-              <img
-                alt="minions"
-                src="../../../../images/naraAn/minions.jpg"
-                className="user_img"
-              />
-              <div className="user_data">
-                <span className="user_name">minions</span>
-                <p className="time">10분 전</p>
-              </div>
-            </div>
-            <div className="story_user">
-              <img
-                alt="minions"
-                src="../../../../images/naraAn/minions.jpg"
-                className="user_img"
-              />
-              <div className="user_data">
-                <span className="user_name">minions</span>
-                <p className="time">10분 전</p>
-              </div>
-            </div>
-            <div className="story_user">
-              <img
-                alt="minions"
-                src="../../../../images/naraAn/minions.jpg"
-                className="user_img"
-              />
-              <div className="user_data">
-                <span className="user_name">minions</span>
-                <p className="time">10분 전</p>
-              </div>
-            </div>
+            <StoryUser />
           </div>
           <div className="main_right_recommend">
             <div className="recommend_title">
               <p>회원님을 위한 추천</p>
-              <button>모두보기</button>
+              <p>모두보기</p>
             </div>
-            <ul className="recommend_user">
-              <li>
-                <img
-                  alt="minions"
-                  src="../../../../images/naraAn/minions.jpg"
-                  className="user_img"
-                />
-              </li>
-              <li className="user_data">
-                <span className="user_name">minions</span>
-                <p>_juhyunii님 외 2명이...</p>
-              </li>
-              <li>
-                <button>팔로우</button>
-              </li>
-            </ul>
-            <ul className="recommend_user">
-              <li>
-                <img
-                  alt="minions"
-                  src="../../../../images/naraAn/minions.jpg"
-                  className="user_img"
-                />
-              </li>
-              <li className="user_data">
-                <span className="user_name">minions</span>
-                <p>_juhyunii님 외 2명이...</p>
-              </li>
-              <li>
-                <button>팔로우</button>
-              </li>
-            </ul>
-            <ul className="recommend_user">
-              <li>
-                <img
-                  alt="minions"
-                  src="../../../../images/naraAn/minions.jpg"
-                  className="user_img"
-                />
-              </li>
-              <li className="user_data">
-                <span className="user_name">minions</span>
-                <p>_juhyunii님 외 2명이...</p>
-              </li>
-              <li>
-                <button>팔로우</button>
-              </li>
-            </ul>
+            <RecommendUser />
           </div>
         </div>
       </main>

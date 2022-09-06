@@ -6,7 +6,7 @@ function CommentList(props) {
   return (
     <>
       {container.map(value => (
-        <Comment key={value.key} item={value.item} />
+        <Comment key={value.key} item={value.item} id={value.id} />
       ))}
     </>
   );

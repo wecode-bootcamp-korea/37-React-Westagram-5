@@ -1,26 +1,25 @@
 import React from 'react';
-import './Login.scss';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import './Login.scss';
 
 const Login = () => {
   const navigate = useNavigate();
+  const [inputValues, setInputValues] = useState({
+    id: '',
+    pw: '',
+  });
+  const isVaild =
+    inputValues.id.includes('@') && inputValues.pw.length >= 5 ? false : true;
 
   const goToMain = () => {
     navigate('/main-nara');
   };
 
-  const [id, userId] = useState('');
-  function saveUserId(e) {
-    userId(e.target.value);
+  function saveUserInput(e) {
+    const { name, value } = e.target;
+    setInputValues({ ...inputValues, [name]: value });
   }
-
-  const [pw, userPw] = useState('');
-  function saveUserPw(e) {
-    userPw(e.target.value);
-  }
-
-  const vaildBtn = id.includes('@') && pw.length >= 5 ? false : true;
 
   return (
     <section className="login_main">
@@ -28,18 +27,16 @@ const Login = () => {
         <h1 className="title">Westagram</h1>
         <div className="login_input">
           <input
-            value={id}
+            name="id"
             className="input_style"
-            onChange={saveUserId}
-            id="id"
+            onChange={saveUserInput}
             type="password"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
-            value={pw}
+            name="pw"
             className="input_style"
-            onChange={saveUserPw}
-            id="password"
+            onChange={saveUserInput}
             type="password"
             placeholder="비밀번호"
           />
@@ -48,7 +45,7 @@ const Login = () => {
             onClick={goToMain}
             type="submit"
             value="로그인"
-            disabled={vaildBtn}
+            disabled={isVaild}
           />
         </div>
         <div className="find_password">
