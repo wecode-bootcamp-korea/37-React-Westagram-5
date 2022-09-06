@@ -3,6 +3,14 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+// [팀별 레포 주소]
+// 1팀: https://github.com/wecode-bootcamp-korea/37-React-Westagram-1
+// 2팀: https://github.com/wecode-bootcamp-korea/37-React-Westagram-2
+// 3팀: https://github.com/wecode-bootcamp-korea/37-React-Westagram-3
+// 4팀: https://github.com/wecode-bootcamp-korea/37-React-Westagram-4
+// 5팀: https://github.com/wecode-bootcamp-korea/37-React-Westagram-5
+// 6팀: https://github.com/wecode-bootcamp-korea/37-React-Westagram-6
+
 // 이승훈의 컴포넌트
 import LoginHoon from './pages/hoonlee/Login/Login';
 import MainHoon from './pages/hoonlee/Main/Main';
