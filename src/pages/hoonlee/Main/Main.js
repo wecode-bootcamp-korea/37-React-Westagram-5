@@ -4,7 +4,6 @@ import SearchBox from './components/SearchBox';
 import Feeds from './components/Feeds/Feeds';
 import MainRight from './components/MainRight/MainRight';
 import './Main.scss';
-import { computeHeadingLevel } from '@testing-library/react';
 
 function MainHoon() {
   const [comments, setComments] = useState([]);
