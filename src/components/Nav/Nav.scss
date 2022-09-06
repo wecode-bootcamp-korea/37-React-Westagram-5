@@ -1,9 +1,4 @@
-@mixin display($flexDirection, $justifyContent, $alignItems) {
-  display: flex;
-  flex-direction: $flexDirection;
-  justify-content: $justifyContent;
-  align-items: $alignItems;
-}
+@import './mixin.scss';
 
 nav {
   background-color: #fcfcfc;
@@ -77,74 +72,4 @@ nav {
       cursor: pointer;
     }
   }
-
-  // .profileBox_hidden {
-  //   display: none;
-  //   z-index: 800;
-  // }
-
-  // .profileBox {
-  //   /* display: none; */
-  //   border: 1px #dbdbdb solid;
-  //   border-radius: 5px;
-  //   background-color: #f3f5f7;
-  //   width: 200px;
-  //   height: 150px;
-  //   position: absolute;
-  //   right: 9px;
-  //   top: 40px;
-  //   z-index: 800;
-
-  //   .profileBox_triangle {
-  //     position: absolute;
-  //     top: -25px;
-  //     right: 5px;
-  //     width: 30px;
-  //     /* border: 1px #dbdbdb solid; */
-  //     border-radius: 5px;
-  //     border-bottom: 15px solid #f3f5f7;
-  //     border-top: 15px solid transparent;
-  //     border-left: 15px solid transparent;
-  //     border-right: 15px solid transparent;
-  //     z-index: 999;
-  //   }
-
-  //   .profileBox_content {
-  //     height: 100%;
-  //     @include display(column, space-between, null);
-  //   }
-
-  //   .profileBox_content div {
-  //     @include display(row, null, center);
-  //     margin-left: 10px;
-  //     margin-top: 5px;
-  //     margin-bottom: 5px;
-
-  //     .container {
-  //       @include display(row, null, center);
-  //       border-top: 1px solid #dbdbdb;
-  //       padding-top: 5px;
-  //       margin-left: 0px;
-  //       margin-top: 0px;
-  //       margin-bottom: 0px;
-  //     }
-
-  //     div {
-  //       .logout {
-  //         margin-left: 10px;
-  //         margin-top: 5px;
-  //         margin-bottom: 5px;
-  //       }
-
-  //       img {
-  //         width: 15px;
-  //         height: 15px;
-  //       }
-
-  //       .text {
-  //         margin-top: 8px;
-  //       }
-  //     }
-  //   }
-  // }
 }
