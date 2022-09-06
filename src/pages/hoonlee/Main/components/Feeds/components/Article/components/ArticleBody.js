@@ -1,9 +1,9 @@
 import React from 'react';
 
-function ArticleBody(props) {
+function ArticleBody({ bodyImage }) {
   return (
     <div className="article_body">
-      <img src="./images/hoonlee/body.JPG" alt="" />
+      <img src={bodyImage} alt="" />
     </div>
   );
 }

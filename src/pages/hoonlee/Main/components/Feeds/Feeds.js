@@ -1,10 +1,5 @@
-import React from 'react';
-import ArticleHeader from './components/ArticleHeader';
-import ArticleCommentInput from './components/ArticleCommentInput';
-import ArticleCommentList from './components/ArticleCommentList';
-import ArticleBody from './components/ArticleBody';
-import ArticleFooter from './components/ArticleFooter';
-import ArticleLike from './components/ArticleLike';
+import React, { useEffect, useState } from 'react';
+import Article from './components/Article/Article';
 
 function Feeds({
   comments,
@@ -14,24 +9,33 @@ function Feeds({
   deleteBtnHandelr,
   likeBtnHandler,
 }) {
+  const [feedsData, setFeedsData] = useState([]);
+
+  useEffect(() => {
+    fetch('./data/feeds/feeds.json')
+      .then(response => response.json())
+      .then(data => setFeedsData(data));
+  }, []);
+
   return (
     <div className="feeds">
-      <div className="article" id="article0">
-        <ArticleHeader />
-        <ArticleBody />
-        <ArticleFooter />
-        <ArticleLike />
-        <ArticleCommentList
-          comments={comments}
-          commentsForComponent={commentsForComponent}
-          deleteBtnHandelr={deleteBtnHandelr}
-          likeBtnHandler={likeBtnHandler}
-        />
-        <ArticleCommentInput
-          commentSubmitHandler={commentSubmitHandler}
-          commentInputReference={commentInputReference}
-        />
-      </div>
+      {feedsData.map((userData, index) => {
+        return (
+          <Article
+            comments={comments}
+            commentsForComponent={commentsForComponent}
+            commentSubmitHandler={commentSubmitHandler}
+            commentInputReference={commentInputReference}
+            deleteBtnHandelr={deleteBtnHandelr}
+            likeBtnHandler={likeBtnHandler}
+            userId={userData.userId}
+            userImage={userData.userImage}
+            bodyImage={userData.bodyImage}
+            feedIndex={index}
+            key={userData.bodyImage}
+          />
+        );
+      })}
     </div>
   );
 }

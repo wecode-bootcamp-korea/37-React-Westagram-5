@@ -8,6 +8,7 @@ function LoginForm({
   inputPw,
   goToMain,
   isLoginBtnDisable,
+  usedInputHandler,
 }) {
   return (
     <form className="inputBox" id="inputBox">

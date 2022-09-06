@@ -230,6 +230,7 @@ main {
       background-color: ffffff;
       border: 1px #dbdbdb solid;
       border-radius: 4px;
+      margin-bottom: 35px;
 
       .article_header {
         @include display(row, null, center);
@@ -256,6 +257,7 @@ main {
 
         img {
           width: 470px;
+          max-height: 500px;
         }
       }
 
