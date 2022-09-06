@@ -18,7 +18,7 @@ const MainRight = () => {
           <span>모두보기</span>
         </div>
         <div className="storyUploadUserWrap">
-          {storyUsers.map(e => (
+          {STORY_USERS.map(e => (
             <StoryUploadUser users={e} key={e.id} />
           ))}
         </div>
@@ -44,7 +44,7 @@ const MainRight = () => {
         </div>
       </div>
       <div className="mainRightFooter">
-        {footerMenu.map(e => (
+        {FOOTER_MENU.map(e => (
           <span key={e.id}>{e.content} ・ </span>
         ))}
         <p>&copy;2022 INSTAGRAM</p>
@@ -57,7 +57,7 @@ export default MainRight;
 
 const altMsg = '이미지오류';
 
-const storyUsers = [
+const STORY_USERS = [
   {
     id: 1,
     userName: 'jiwon',
@@ -106,7 +106,7 @@ const storyUsers = [
   },
 ];
 
-const footerMenu = [
+const FOOTER_MENU = [
   { id: 1, content: 'Instagram 정보' },
   { id: 2, content: '지원' },
   { id: 3, content: '홍보센터' },

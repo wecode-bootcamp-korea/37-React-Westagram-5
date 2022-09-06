@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './Main.scss';
 
-const Comment = ({ content, onClick }) => {
+const Comment = ({ props, onXClick }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   return (
     <li className="comment">
       <span className="commentId">jiwon</span>
-      <span className="commentSaying">{content}</span>
+      <span className="commentSaying">{props.content}</span>
       <img
         src={
           isLiked
@@ -19,7 +19,7 @@ const Comment = ({ content, onClick }) => {
           setIsLiked(!isLiked);
         }}
       />
-      <button onClick={onClick}> X </button>
+      <button onClick={onXClick}> X </button>
     </li>
   );
 };

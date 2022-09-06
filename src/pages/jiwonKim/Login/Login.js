@@ -16,7 +16,7 @@ function LoginJiwon() {
   const [userInput, setUserInput] = useState({ email: '', password: '' });
 
   const saveUserInput = e => {
-    const { name, value } = e.target;
+    const { value, name } = e.target;
     setUserInput({ ...userInput, [name]: value });
   };
 

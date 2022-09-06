@@ -44,7 +44,7 @@ const Feeds = () => {
       />
       <div className="reactionIcons">
         <div className="reactionIconsLeft">
-          {iconImages.map((e, i) => (
+          {ICON_IMAGES.map((e, i) => (
             <img src={e} alt={altMsg} key={i} />
           ))}
         </div>
@@ -68,12 +68,7 @@ const Feeds = () => {
           </span>
         </li>
         {comments.map(e => (
-          <Comment
-            key={e.id}
-            id={e.id}
-            content={e.content}
-            onClick={() => handleXClick(e)}
-          />
+          <Comment key={e.id} props={e} onXClick={() => handleXClick(e)} />
         ))}
         <span className="timePassed">0초 전</span>
       </ul>
@@ -92,7 +87,7 @@ const Feeds = () => {
 
 export default Feeds;
 
-const iconImages = [
+const ICON_IMAGES = [
   'https://cdn-icons-png.flaticon.com/512/1077/1077035.png',
   'https://cdn-icons-png.flaticon.com/512/7205/7205744.png',
   'https://cdn-icons-png.flaticon.com/512/2956/2956783.png',
