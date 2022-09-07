@@ -25,26 +25,6 @@ $font-micro: 10px;
   align-items: $alignItems;
 }
 
-body {
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-p {
-  margin: 0;
-}
-
-ul,
-.list_style {
-  padding-left: 0;
-  margin: 0;
-  list-style: none;
-}
-
 button {
   background-color: $white-color;
   border-style: none;
@@ -83,66 +63,23 @@ input {
   font-size: $font-medium;
 }
 
-/* nav */
-
-// .nav {
-//   @include flexSort(space-between, center);
-//   padding: $padding calc($padding * 10);
-//   background-color: $white-color;
-//   border-bottom: 2px solid $grey-color;
-
-//   .title {
-//     margin-left: $padding;
-//     padding: 0 $padding;
-//     border-left: 1px solid $black-color;
-//     font-size: $font-large;
-//     font-weight: bold;
-//   }
-
-//   &_search {
-//     @include flexSort(center, center);
-//     width: 30%;
-//     font-size: $font-medium;
-
-//     input {
-//       width: 100%;
-//       padding: 5px $padding;
-//       border: 1px solid $grey-color;
-//       border-radius: 5px;
-//       background-color: $grey-light-color;
-//     }
-
-//     i {
-//       position: absolute;
-//       color: $grey-dark-color;
-//     }
-//   }
-
-//   &_icons {
-//     display: flex;
-
-//     i {
-//       margin-left: $padding;
-//       color: $grey-dark-color;
-//       font-size: $font-large;
-//     }
-//   }
-// }
-
 /* 피드 */
 
 main {
   @include flexSort(space-around, flex-start);
   padding: calc($padding * 10) calc($padding * 23);
-  height: 100vh;
   background-color: $grey-light-color;
   font-size: $font-medium;
 
   .feeds {
-    width: 470px;
-    background-color: $white-color;
-    border: 2px solid $grey-color;
     border-radius: 5px;
+
+    article {
+      margin-bottom: calc($padding * 3);
+      border: 2px solid $grey-color;
+      border-radius: 5px;
+      background-color: $white-color;
+    }
 
     &_header {
       @include flexSort(space-between, center);
@@ -153,13 +90,11 @@ main {
         align-items: center;
       }
     }
-    .main_img {
+    .main_img img {
       width: 470px;
-
-      img {
-        max-width: 100%;
-      }
+      max-height: 470px;
     }
+
     .feed_contents {
       padding: 0 $padding;
       font-size: $font-medium;
@@ -243,6 +178,7 @@ main {
     &_story {
       height: 245px;
       margin-bottom: calc($padding * 3);
+      padding-left: $padding;
       background-color: $white-color;
       border: 2px solid $grey-color;
       border-radius: 5px;
@@ -258,6 +194,7 @@ main {
       }
     }
     &_recommend {
+      padding-left: $padding;
       height: 200px;
       background-color: $white-color;
       border: 2px solid $grey-color;
@@ -270,9 +207,34 @@ main {
     }
 
     .recommend_user {
-      @include flexSort(flex-start, center);
+      @include flexSort(space-between, center);
       padding: calc($padding/2) $padding;
       margin: 0;
+    }
+
+    .footer_list {
+      display: flex;
+      flex-grow: 1;
+      flex-wrap: wrap;
+      margin-top: calc($padding * 2);
+      width: 280px;
+
+      li {
+        &:not(:last-child)::after {
+          content: '\00B7';
+          color: lightgray;
+          margin: 0 0.25em 0 0.25em;
+        }
+
+        a {
+          padding: calc($padding/3);
+          text-decoration: none;
+          color: $grey-dark-color;
+          opacity: 0.4;
+          font-size: $font-small;
+          font-weight: bold;
+        }
+      }
     }
   }
 }

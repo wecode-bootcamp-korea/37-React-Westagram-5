@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "user_image": "../../images/naraAn/profile/tomung.jpeg",
+    "user_name": "nariiiii",
+    "feed_image": "../../images/naraAn/feeds/waikiki.jpeg",
+    "like_user_image": "../../images/naraAn/profile/minions.jpg",
+    "like_user_name": "minions",
+    "comment": "여행가고 싶다.....🥲"
+  },
+  {
+    "id": 2,
+    "user_image": "../../images/naraAn/profile/dog2.jpg",
+    "user_name": "jungmin_12",
+    "feed_image": "../../images/naraAn/feeds/cafe.png",
+    "like_user_image": "../../images/naraAn/profile/dog1.jpg",
+    "like_user_name": "juhyunii",
+    "comment": "날씨가 너무 좋네 🌿"
+  },
+  {
+    "id": 3,
+    "user_image": "../../images/naraAn/profile/duck.jpg",
+    "user_name": "wecode_37th",
+    "feed_image": "../../images/naraAn/feeds/coding.jpg",
+    "like_user_image": "../../images/naraAn/profile/cat1.jpg",
+    "like_user_name": "nyang_punch",
+    "comment": "공부중... 힘내보자! 🥸"
+  }
+]
