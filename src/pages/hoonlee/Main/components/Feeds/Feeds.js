@@ -14,7 +14,10 @@ function Feeds({
   useEffect(() => {
     fetch('./data/feeds/feeds.json')
       .then(response => response.json())
-      .then(data => setFeedsData(data));
+      .then(data => {
+        data.map((value, index) => (comments[index] = value.comments));
+        setFeedsData(data);
+      });
   }, []);
 
   return (

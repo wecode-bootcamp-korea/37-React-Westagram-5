@@ -9,6 +9,7 @@ function LoginForm({
   goToMain,
   isLoginBtnDisable,
   usedInputHandler,
+  loginRequest,
 }) {
   return (
     <form className="inputBox" id="inputBox">
@@ -26,7 +27,11 @@ function LoginForm({
         onChange={saveUserPw}
         value={inputPw}
       />
-      <Btn goToMain={goToMain} isLoginBtnDisable={isLoginBtnDisable} />
+      <Btn
+        goToMain={goToMain}
+        isLoginBtnDisable={isLoginBtnDisable}
+        loginRequest={loginRequest}
+      />
     </form>
   );
 }

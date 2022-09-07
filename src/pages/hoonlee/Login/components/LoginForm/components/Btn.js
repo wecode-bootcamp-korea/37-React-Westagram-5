@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Btn({ goToMain, isLoginBtnDisable }) {
+function Btn({ goToMain, isLoginBtnDisable, loginRequest }) {
   // console.log('isLoginBtnDisable : ', isLoginBtnDisable);
 
   const BtnClassName =
     isLoginBtnDisable === true ? 'buttonDisable' : 'buttonAble';
   return (
     <button
-      onClick={goToMain}
+      onClick={loginRequest}
       disabled={isLoginBtnDisable}
       className={BtnClassName}
     >

@@ -2,36 +2,65 @@
   {
     "userId": "noon_noo_nan_na",
     "userImage": "./images/hoonlee/userImg/user0.JPG",
-    "bodyImage": "./images/hoonlee/userImg/user0.JPG"
+    "bodyImage": "./images/hoonlee/userImg/user0.JPG",
+    "comments": [
+      {
+        "User": "ImCat",
+        "Text": "나는 고양이.",
+        "Like": true
+      },
+      {
+        "User": "ImDog",
+        "Text": "나는 강아지.",
+        "Like": false
+      }
+    ]
   },
   {
     "userId": "nananana",
     "userImage": "./images/hoonlee/userImg/user1.JPG",
-    "bodyImage": "./images/hoonlee/userImg/user1.JPG"
+    "bodyImage": "./images/hoonlee/userImg/user1.JPG",
+    "comments": [
+      {
+        "User": "HelloWorld",
+        "Text": "안녕 세상",
+        "Like": true
+      },
+      {
+        "User": "WorldHello",
+        "Text": "세상 안녕",
+        "Like": false
+      }
+    ]
   },
   {
     "userId": "lool_loo_lal_la",
     "userImage": "./images/hoonlee/userImg/user2.JPG",
-    "bodyImage": "./images/hoonlee/userImg/user2.JPG"
+    "bodyImage": "./images/hoonlee/userImg/user2.JPG",
+    "comments": []
   },
   {
     "userId": "poon_poo_pan_pa",
     "userImage": "./images/hoonlee/userImg/user3.JPG",
-    "bodyImage": "./images/hoonlee/userImg/user3.JPG"
+    "bodyImage": "./images/hoonlee/userImg/user3.JPG",
+    "comments": []
   },
   {
     "userId": "joon_joo_jan_ja",
     "userImage": "./images/hoonlee/userImg/user4.JPG",
-    "bodyImage": "./images/hoonlee/userImg/user4.JPG"
+    "bodyImage": "./images/hoonlee/userImg/user4.JPG",
+    "comments": []
   },
   {
     "userId": "hoon_hoo_han_ha",
     "userImage": "./images/hoonlee/userImg/user5.JPG",
-    "bodyImage": "./images/hoonlee/userImg/user5.JPG"
+    "bodyImage": "./images/hoonlee/userImg/user5.JPG",
+    "comments": []
   },
   {
     "userId": "boon_boo_ban_ba",
     "userImage": "./images/hoonlee/userImg/user6.JPG",
-    "bodyImage": "./images/hoonlee/userImg/user6.JPG"
+    "bodyImage": "./images/hoonlee/userImg/user6.JPG",
+    "comments": []
   }
 ]
