@@ -8,6 +8,7 @@ import comment_ico from 'assets/rubiKang/2-2.png';
 import bookmark from 'assets/rubiKang/premium-icon-mark-5894523.png';
 
 function MainRubi() {
+<<<<<<< HEAD
   const [comment, setComment] = useState('');
 
   const comments = [{}];
@@ -91,6 +92,9 @@ function MainRubi() {
       </div>
     </>
   );
+=======
+  return <h1>메인입니다.</h1>;
+>>>>>>> a7eea6415e7317c6e558a402cdf294d4a76c20f2
 }
 
 export default MainRubi;

@@ -3,6 +3,7 @@
   align-items: center;
   width: 100%;
   height: 100vh;
+<<<<<<< HEAD
 
   .login-content {
     width: 400px;
@@ -29,6 +30,33 @@
     .box {
       margin-bottom: 6px;
     }
+=======
+}
+
+.login-content {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px 0;
+  border: 1px solid rgba(219, 219, 219, 1);
+
+  .header {
+    margin: 35px 0;
+    text-align: center;
+
+    h1 {
+      font-size: 50px;
+      line-height: 1.3em;
+      font-weight: 400;
+      font-family: 'Lobster', sans-serif;
+    }
+  }
+}
+.form-wrap {
+  padding: 0 40px;
+
+  .box {
+    margin-bottom: 6px;
+>>>>>>> a7eea6415e7317c6e558a402cdf294d4a76c20f2
 
     input {
       width: 100%;
@@ -41,6 +69,7 @@
     .btn {
       margin-top: 15px;
     }
+<<<<<<< HEAD
 
     button {
       border: 1px solid transparent;
@@ -65,5 +94,31 @@
       text-decoration: none;
       color: #00376b;
     }
+=======
+  }
+
+  button {
+    border: 1px solid transparent;
+    background-color: rgba(0, 149, 246, 1);
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    width: 100%;
+    height: 30px;
+
+    &:disabled {
+      background-color: rgba(0, 149, 246, 0.3);
+    }
+  }
+}
+
+.password-find {
+  margin-top: 100px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #00376b;
+>>>>>>> a7eea6415e7317c6e558a402cdf294d4a76c20f2
   }
 }
