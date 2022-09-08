@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import RecommendUser from './components/RecommendUser';
 import AsideFooter from './components/AsideFooter';
@@ -8,13 +8,35 @@ import Feeds from './Feeds';
 import './Main.scss';
 
 function Main() {
+  const [feedInfoList, setFeedInfoList] = useState([]);
   const userWecode = 'wecode_37th';
+
+  useEffect(() => {
+    fetch('../../../../data/feedData.json')
+      .then(response => response.json())
+      .then(result => setFeedInfoList(result));
+  }, []);
 
   return (
     <>
       <Nav />
       <main>
-        <Feeds userWecode={userWecode} />
+        <div className="feeds">
+          {feedInfoList.map(feedInfo => {
+            return (
+              <Feeds
+                key={feedInfo.id}
+                userImg={feedInfo.user_image}
+                userName={feedInfo.user_name}
+                feedImg={feedInfo.feed_image}
+                likeUserImg={feedInfo.like_user_image}
+                likeUserName={feedInfo.like_user_name}
+                comment={feedInfo.comment}
+                userWecode={userWecode}
+              />
+            );
+          })}
+        </div>
         <aside className="main_right">
           <header className="main_right_title">
             <img
