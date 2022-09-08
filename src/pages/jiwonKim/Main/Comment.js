@@ -9,11 +9,7 @@ const Comment = ({ props, onXClick }) => {
       <span className="commentId">jiwon</span>
       <span className="commentSaying">{props.content}</span>
       <img
-        src={
-          isLiked
-            ? 'https://cdn-icons-png.flaticon.com/512/2589/2589054.png' // 꽉찬하트
-            : 'https://cdn-icons-png.flaticon.com/512/2589/2589197.png' // 빈하트
-        }
+        src={isLiked ? FULL_HEART : EMPTY_HEART}
         alt="하트"
         onClick={() => {
           setIsLiked(!isLiked);
@@ -25,3 +21,6 @@ const Comment = ({ props, onXClick }) => {
 };
 
 export default Comment;
+
+const FULL_HEART = 'https://cdn-icons-png.flaticon.com/512/2589/2589054.png';
+const EMPTY_HEART = 'https://cdn-icons-png.flaticon.com/512/2589/2589197.png';

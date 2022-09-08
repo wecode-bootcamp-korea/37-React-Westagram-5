@@ -1,16 +1,15 @@
 import React from 'react';
 
-import './Main.scss';
-
-import Navibar from './Navibar';
-import Feeds from './Feeds';
+import Nav from '../../../components/Nav/Nav';
 import MainRight from './MainRight';
 import MainLeft from './MainLeft';
+
+import './Main.scss';
 
 function MainJiwon() {
   return (
     <div className="mainContainer">
-      <Navibar />
+      <Nav />
       <div className="mainBody">
         <MainLeft />
         <MainRight />

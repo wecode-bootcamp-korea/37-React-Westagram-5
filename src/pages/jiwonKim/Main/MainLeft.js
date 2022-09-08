@@ -6,9 +6,7 @@ const MainLeft = () => {
   const [feedsList, setFeedsList] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/feedsDataJiwon.json', {
-      method: 'GET',
-    })
+    fetch('/data/feedsDataJiwon.json')
       .then(res => res.json())
       .then(data => {
         setFeedsList(data);
@@ -17,14 +15,8 @@ const MainLeft = () => {
 
   return (
     <div>
-      {feedsList.map(e => (
-        <Feeds
-          userName={e.userName}
-          userImage={e.userImage}
-          uploadedImage={e.uploadedImage}
-          userComment={e.userComment}
-          key={e.id}
-        />
+      {feedsList.map(feed => (
+        <Feeds feed={feed} key={feed.id} />
       ))}
     </div>
   );

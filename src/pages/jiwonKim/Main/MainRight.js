@@ -18,8 +18,8 @@ const MainRight = () => {
           <span>모두보기</span>
         </div>
         <div className="storyUploadUserWrap">
-          {STORY_USERS.map(e => (
-            <StoryUploadUser users={e} key={e.id} />
+          {STORY_USERS.map(item => (
+            <StoryUploadUser users={item} key={item.id} />
           ))}
         </div>
       </div>
@@ -44,8 +44,8 @@ const MainRight = () => {
         </div>
       </div>
       <div className="mainRightFooter">
-        {FOOTER_MENU.map(e => (
-          <span key={e.id}>{e.content} ・ </span>
+        {FOOTER_MENU.map(item => (
+          <span key={item.id}>{item.content} ・ </span>
         ))}
         <p>&copy;2022 INSTAGRAM</p>
       </div>

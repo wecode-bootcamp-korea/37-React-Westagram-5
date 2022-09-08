@@ -2,12 +2,44 @@ import React from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import '../../../styles/reset.scss';
-import '../../../styles/common.scss';
-
 import './Login.scss';
 
 function LoginJiwon() {
+  // sign up 회원가입
+  const signUp = e => {
+    e.preventDefault();
+    fetch('http://10.58.0.33:3000/auth/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({
+        email: userInput.email,
+        password: userInput.password,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .then(alert('가입에 성공하였습니다'));
+  };
+
+  // sign in 로그인
+  const signIn = e => {
+    e.preventDefault();
+    fetch('http://10.58.0.33:3000/auth/signin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({
+        email: userInput.email,
+        password: userInput.password,
+      }),
+    })
+      .then(res => res.json())
+      .then(data =>
+        data.accessToken
+          ? (goToMain(), window.localStorage.setItem('token', data.accessToken))
+          : alert('비밀번호가 잘못되었습니다!')
+      );
+  };
+
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/main-jiwon');
@@ -45,12 +77,16 @@ function LoginJiwon() {
             onChange={saveUserInput}
           />
 
+          <button className="loginButton" disabled={!isValid} onClick={signIn}>
+            로그인
+          </button>
           <button
             className="loginButton"
+            style={{ backgroundColor: 'lightcoral' }}
             disabled={!isValid}
-            onClick={goToMain}
+            onClick={signUp}
           >
-            로그인
+            회원가입
           </button>
         </form>
         <div className="loginFooter">
