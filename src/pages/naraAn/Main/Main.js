@@ -31,8 +31,7 @@ function Main() {
                 feedImg={feedInfo.feed_image}
                 likeUserImg={feedInfo.like_user_image}
                 likeUserName={feedInfo.like_user_name}
-                comment={feedInfo.comment}
-                userWecode={userWecode}
+                feedComment={feedInfo.comment}
               />
             );
           })}
@@ -44,10 +43,10 @@ function Main() {
               alt="duck"
               src="../../../../images/naraAn/profile/duck.jpg"
             />
-            <di>
+            <div>
               <span className="user_name">{userWecode}</span>
               <p>wecode | 위코드</p>
-            </di>
+            </div>
           </header>
           <div className="main_right_story">
             <div className="story_title">

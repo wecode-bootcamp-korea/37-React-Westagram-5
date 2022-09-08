@@ -3,8 +3,14 @@ import CommentList from './components/CommentList';
 import Comment from './components/Comment';
 import FeedIcons from './components/feedIcons';
 
-function Feeds(props) {
-  const { userWecode } = props;
+function Feeds({
+  userImg,
+  userName,
+  feedImg,
+  likeUserImg,
+  likeUserName,
+  feedComment,
+}) {
   const [container, setContainer] = useState([]);
   const [comment, setComment] = useState('');
   const [id, setId] = useState(0);
@@ -17,7 +23,7 @@ function Feeds(props) {
 
   function addComment(e) {
     e.preventDefault();
-    setContainer([...container, { key: id, item: comment, id: userWecode }]);
+    setContainer([...container, { key: id, item: comment, id: 'wecode_37th' }]);
     setId(id + 1);
     setComment('');
   }
@@ -26,8 +32,8 @@ function Feeds(props) {
     <article>
       <header className="feeds_header">
         <div className="user_data">
-          <img className="user_img" alt="userImage" src={props.userImg} />
-          <span className="user_name">{props.userName}</span>
+          <img className="user_img" alt="userImage" src={userImg} />
+          <span className="user_name">{userName}</span>
         </div>
         <button>
           <i className="fa-solid fa-ellipsis" />
@@ -35,17 +41,17 @@ function Feeds(props) {
       </header>
       <div className="feeds_main">
         <span className="main_img">
-          <img alt="feedImage" src={props.feedImg} />
+          <img alt="feedImage" src={feedImg} />
         </span>
         <div className="feed_contents">
           <FeedIcons />
           <div className="feed_likes">
-            <img className="user_img" alt="userImage" src={props.likeUserImg} />
-            <span className="user_name">{props.likeUserName}</span>
+            <img className="user_img" alt="userImage" src={likeUserImg} />
+            <span className="user_name">{likeUserName}</span>
             <span>님 외 10명이 좋아합니다</span>
           </div>
           <ul className="feed_text">
-            <Comment id={props.userName} item={props.comment} />
+            <Comment id={userName} item={feedComment} />
             <li>
               <button>더보기</button>
             </li>
