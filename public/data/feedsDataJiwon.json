@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "userName": "rlawldnjs",
+    "userImage": "https://images.unsplash.com/photo-1662385864104-cddde7bfe5a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1635&q=80",
+    "uploadedImage": "https://images.unsplash.com/photo-1662375750607-d6d17e77a5ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+    "userComment": "내가 만든 샌드위치 캬캬",
+    "followerComments": []
+  },
+  {
+    "id": 2,
+    "userName": "skgus742",
+    "userImage": "https://images.unsplash.com/photo-1662394763056-0fa5eff98003?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+    "uploadedImage": "https://images.unsplash.com/photo-1657664043009-c4975cb4eed3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80",
+    "userComment": "정원에 물주기 ㅋㅋ",
+    "followerComments": []
+  },
+  {
+    "id": 3,
+    "userName": "hellomino",
+    "userImage": "https://images.unsplash.com/photo-1662387709820-5ea1c001c67b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1MXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+    "uploadedImage": "https://images.unsplash.com/photo-1662377684735-6f33e9ba10c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2263&q=80",
+    "userComment": "일본 여행가서 찍은 사진 ㅇㅅㅇ",
+    "followerComments": []
+  }
+]
