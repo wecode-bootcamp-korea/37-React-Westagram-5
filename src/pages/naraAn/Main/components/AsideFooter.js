@@ -1,13 +1,14 @@
 import React from 'react';
-import { FOOTER_LIST } from './footerData';
+import { FOOTER_DATA } from './footerData';
+import './asideFooter.scss';
 
 function AsideFooter() {
   return (
-    <ul className="footer_list">
-      {FOOTER_LIST.map(footerList => {
+    <ul className="aside_footer">
+      {FOOTER_DATA.map(footerData => {
         return (
-          <li key={footerList.id}>
-            <a href={footerList.link}>{footerList.text}</a>
+          <li key={footerData.id}>
+            <a href={footerData.link}>{footerData.text}</a>
           </li>
         );
       })}

@@ -1,4 +1,5 @@
 @import '../../../styles/variables.scss';
+@import './feeds.scss';
 
 button {
   background-color: $white-color;
@@ -25,119 +26,21 @@ input {
   font-weight: bold;
 }
 
-.user_data {
-  margin-left: $padding;
-}
-
-.flex {
-  @include flexSort(space-between, flex-start);
-}
-
 .comment_style {
   margin-left: $padding;
   font-size: $font-medium;
 }
 
-/* 피드 */
-
-main {
+.main {
   @include flexSort(space-around, flex-start);
   padding: calc($padding * 10) calc($padding * 23);
   background-color: $grey-light-color;
   font-size: $font-medium;
 
-  .feeds {
-    border-radius: 5px;
-
-    article {
-      margin-bottom: calc($padding * 3);
-      border: 2px solid $grey-color;
-      border-radius: 5px;
-      background-color: $white-color;
-    }
-
-    &_header {
-      @include flexSort(space-between, center);
-      padding: $padding;
-
-      .user_data {
-        display: flex;
-        align-items: center;
-      }
-    }
-    .main_img img {
-      width: 470px;
-      max-height: 470px;
-    }
-
-    .feed_contents {
-      padding: 0 $padding;
-      font-size: $font-medium;
-
-      .feed_icons {
-        @include flexSort(space-between, flex-start);
-        margin: 0;
-        padding-left: 0;
-
-        i {
-          font-size: calc($font-medium * 1.5);
-        }
-      }
-
-      .feed_likes {
-        @include flexSort(flex-start, center);
-        margin: $padding 0;
-      }
-      .feed_text {
-        @include flexSort(space-between, center);
-        padding-left: 0;
-        margin: 0;
-
-        button {
-          color: $grey-dark-color;
-          font-weight: bold;
-        }
-      }
-
-      p:last-child {
-        color: $grey-dark-color;
-        font-weight: bold;
-      }
-      #new_comment_location ul {
-        margin: 0;
-        padding-left: 0;
-      }
-    }
-    #comment_write {
-      @include flexSort(space-between, flex-start);
-      padding: $padding;
-      border-top: 2px solid $grey-color;
-
-      input:first-child {
-        width: 100%;
-        border: none;
-      }
-
-      input:last-child {
-        color: $blue-color;
-        background-color: $white-color;
-        border: none;
-        font-weight: bold;
-
-        &:disabled {
-          opacity: 0.4;
-        }
-      }
-    }
-  }
   .main_right {
     &_title {
       @include flexSort(flex-start, center);
       margin-bottom: calc($padding * 2);
-
-      ul {
-        padding-left: 0;
-      }
     }
 
     p {
@@ -185,31 +88,6 @@ main {
       @include flexSort(space-between, center);
       padding: calc($padding/2) $padding;
       margin: 0;
-    }
-
-    .footer_list {
-      display: flex;
-      flex-grow: 1;
-      flex-wrap: wrap;
-      margin-top: calc($padding * 2);
-      width: 280px;
-
-      li {
-        &:not(:last-child)::after {
-          content: '\00B7';
-          color: lightgray;
-          margin: 0 0.25em 0 0.25em;
-        }
-
-        a {
-          padding: calc($padding/3);
-          text-decoration: none;
-          color: $grey-dark-color;
-          opacity: 0.4;
-          font-size: $font-small;
-          font-weight: bold;
-        }
-      }
     }
   }
 }

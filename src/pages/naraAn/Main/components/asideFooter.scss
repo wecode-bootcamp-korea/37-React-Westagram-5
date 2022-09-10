@@ -1,0 +1,26 @@
+@import '../../../../styles/variables.scss';
+
+.aside_footer {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  margin-top: calc($padding * 2);
+  width: 280px;
+
+  li {
+    &:not(:last-child)::after {
+      content: '\00B7';
+      color: lightgray;
+      margin: 0 0.25em 0 0.25em;
+    }
+
+    a {
+      padding: calc($padding/3);
+      text-decoration: none;
+      color: $grey-dark-color;
+      opacity: 0.4;
+      font-size: $font-small;
+      font-weight: bold;
+    }
+  }
+}

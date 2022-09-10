@@ -1,4 +1,4 @@
-export const FOOTER_LIST = [
+export const FOOTER_DATA = [
   { id: 1, link: 'https://about.instagram.com/', text: '소개' },
   { id: 2, link: 'https://help.instagram.com/', text: '도움말' },
   { id: 3, link: 'https://about.instagram.com/blog', text: '홍보 센터' },

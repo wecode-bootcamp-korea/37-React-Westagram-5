@@ -4,32 +4,7 @@
   font-family: 'Lobster', cursive;
 }
 
-.user_img {
-  width: $avatar-small-size;
-  height: $avatar-small-size;
-  margin-right: $padding;
-  border: 1px solid $grey-color;
-  border-radius: 50%;
-}
-
-.user_name {
-  font-weight: bold;
-}
-
-.user_data {
-  margin-left: $padding;
-}
-
-.flex {
-  @include flexSort(space-between, flex-start);
-}
-
-.comment_style {
-  margin-left: $padding;
-  font-size: $font-medium;
-}
-
-.login_main {
+.login {
   @include flexSort(center, center);
   height: 100vh;
   background-color: $grey-light-color;

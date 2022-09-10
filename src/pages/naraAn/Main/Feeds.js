@@ -3,14 +3,7 @@ import CommentList from './components/CommentList';
 import Comment from './components/Comment';
 import FeedIcons from './components/feedIcons';
 
-function Feeds({
-  userImg,
-  userName,
-  feedImg,
-  likeUserImg,
-  likeUserName,
-  feedComment,
-}) {
+function Feeds({ feedInfo }) {
   const [container, setContainer] = useState([]);
   const [comment, setComment] = useState('');
   const [id, setId] = useState(0);
@@ -32,8 +25,12 @@ function Feeds({
     <article>
       <header className="feeds_header">
         <div className="user_data">
-          <img className="user_img" alt="userImage" src={userImg} />
-          <span className="user_name">{userName}</span>
+          <img
+            className="user_img"
+            alt="피드 사용자 프로필 이미지"
+            src={feedInfo.user_image}
+          />
+          <span className="user_name">{feedInfo.user_name}</span>
         </div>
         <button>
           <i className="fa-solid fa-ellipsis" />
@@ -41,17 +38,21 @@ function Feeds({
       </header>
       <div className="feeds_main">
         <span className="main_img">
-          <img alt="feedImage" src={feedImg} />
+          <img alt="피드 이미지" src={feedInfo.feed_image} />
         </span>
         <div className="feed_contents">
           <FeedIcons />
           <div className="feed_likes">
-            <img className="user_img" alt="userImage" src={likeUserImg} />
-            <span className="user_name">{likeUserName}</span>
+            <img
+              className="user_img"
+              alt="좋아요를 클릭한 사용자 이미지"
+              src={feedInfo.like_user_image}
+            />
+            <span className="user_name">{feedInfo.like_user_name}</span>
             <span>님 외 10명이 좋아합니다</span>
           </div>
           <ul className="feed_text">
-            <Comment id={userName} item={feedComment} />
+            <Comment id={feedInfo.user_name} item={feedInfo.comment} />
             <li>
               <button>더보기</button>
             </li>
@@ -63,7 +64,7 @@ function Feeds({
         </div>
       </div>
       <footer>
-        <form onSubmit={addComment} id="comment_write">
+        <form onSubmit={addComment} className="comment_write">
           <input
             value={comment}
             onChange={getValue}

@@ -10,33 +10,24 @@ const Login = () => {
     pw: '',
   });
 
-  //아이디비번 유효성 검사
   const isVaild =
     inputValues.id.includes('@') && inputValues.pw.length >= 5 ? false : true;
 
-  // // 메인페이지로 이동
-  // const goToMain = () => {
-  //   navigate('/main-nara');
-  // };
-
-  //사용자 정보 저장
-  function saveUserInput(e) {
+  const saveUserInput = e => {
     const { name, value } = e.target;
     setInputValues({ ...inputValues, [name]: value });
-  }
+  };
 
-  // 로그인 & 회원가입 실습
-
-  function signUp(e) {
+  const signUp = e => {
     e.preventDefault();
     fetch('http://10.58.2.36:3001/auth/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({ email: inputValues.id, password: inputValues.pw }),
     });
-  }
+  };
 
-  function login(e) {
+  const login = e => {
     e.preventDefault();
     fetch('http://10.58.2.36:3001/auth/signin', {
       method: 'POST',
@@ -45,7 +36,7 @@ const Login = () => {
     })
       .then(response => response.json())
       .then(data => {
-        if (!!data.accessToken) {
+        if (data.accessToken) {
           alert('환영합니다!');
           localStorage.setItem('token', data.accessToken);
           navigate('/main-nara');
@@ -55,10 +46,10 @@ const Login = () => {
           alert('비밀번호를 확인해주세요!');
         }
       });
-  }
+  };
 
   return (
-    <section className="login_main">
+    <section className="login">
       <form className="login_form">
         <h1 className="title">Westagram</h1>
         <div className="login_input">
@@ -67,6 +58,7 @@ const Login = () => {
             className="input_style"
             onChange={saveUserInput}
             type="text"
+            value={inputValues.id}
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
@@ -74,6 +66,7 @@ const Login = () => {
             className="input_style"
             onChange={saveUserInput}
             type="password"
+            value={inputValues.pw}
             placeholder="비밀번호"
           />
           <input
