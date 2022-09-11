@@ -1,3 +1,14 @@
+@import '../../../../styles/variables.scss';
+
+.comment_style {
+  margin-left: $padding;
+  font-size: $font-medium;
+}
+
+input {
+  outline: none;
+}
+
 .feeds {
   border-radius: 5px;
 

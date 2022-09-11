@@ -5,7 +5,7 @@ import AsideFooter from './components/AsideFooter';
 import Nav from '../../../components/Nav/Nav';
 import MainRightStory from './components/MainRightStory';
 import Feeds from './Feeds';
-import './Main.scss';
+import './scss/Main.scss';
 
 function Main() {
   const [feedInfoList, setFeedInfoList] = useState([]);

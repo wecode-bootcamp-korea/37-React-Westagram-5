@@ -10,7 +10,7 @@ const USER_LIST = [
     id: 2,
     src: '/images/naraAn/profile/cat3.jpg',
     name: 'zip.nyang.2',
-    follow: 'jungmin_12님 외 1명이...',
+    follow: 'jungmin_1님 외 1명이...',
   },
   {
     id: 3,

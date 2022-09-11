@@ -57,9 +57,7 @@ function Feeds({ feedInfo }) {
               <button>더보기</button>
             </li>
           </ul>
-          <ul>
-            <CommentList container={container} />
-          </ul>
+          <CommentList container={container} />
           <p>42분 전</p>
         </div>
       </div>

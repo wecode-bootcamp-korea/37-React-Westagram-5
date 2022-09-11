@@ -1,42 +1,6 @@
-@import '../../../styles/variables.scss';
-@import './feeds.scss';
-
-button {
-  background-color: $white-color;
-  border-style: none;
-}
-
-input {
-  outline: none;
-}
-
-.title {
-  font-family: 'Lobster', cursive;
-}
-
-.user_img {
-  width: $avatar-small-size;
-  height: $avatar-small-size;
-  margin-right: $padding;
-  border: 1px solid $grey-color;
-  border-radius: 50%;
-}
-
-.user_name {
-  font-weight: bold;
-}
-
-.comment_style {
-  margin-left: $padding;
-  font-size: $font-medium;
-}
+@import '../../../../styles/variables.scss';
 
 .main {
-  @include flexSort(space-around, flex-start);
-  padding: calc($padding * 10) calc($padding * 23);
-  background-color: $grey-light-color;
-  font-size: $font-medium;
-
   .main_right {
     &_title {
       @include flexSort(flex-start, center);
@@ -69,6 +33,10 @@ input {
       .story_user {
         @include flexSort(flex-start, center);
         padding: calc($padding/2) $padding;
+      }
+
+      .user_data {
+        margin-left: $padding;
       }
     }
     &_recommend {

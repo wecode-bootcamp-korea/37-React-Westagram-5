@@ -1,6 +1,5 @@
 import React from 'react';
 import { FOOTER_DATA } from './footerData';
-import './asideFooter.scss';
 
 function AsideFooter() {
   return (
