@@ -1,0 +1,28 @@
+@import './Feeds.scss';
+@import './MainRight.scss';
+@import './AsideFooter.scss';
+@import '../../../../styles/variables.scss';
+
+button {
+  background-color: $white-color;
+  border-style: none;
+}
+
+.user_img {
+  width: $avatar-small-size;
+  height: $avatar-small-size;
+  margin-right: $padding;
+  border: 1px solid $grey-color;
+  border-radius: 50%;
+}
+
+.user_name {
+  font-weight: bold;
+}
+
+.main {
+  @include flexSort(space-around, flex-start);
+  padding: calc($padding * 10) calc($padding * 23);
+  background-color: $grey-light-color;
+  font-size: $font-medium;
+}

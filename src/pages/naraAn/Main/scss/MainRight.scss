@@ -1,0 +1,61 @@
+@import '../../../../styles/variables.scss';
+
+.main {
+  .main_right {
+    &_title {
+      @include flexSort(flex-start, center);
+      margin-bottom: calc($padding * 2);
+    }
+
+    p {
+      color: $grey-dark-color;
+      font-size: $font-small;
+      font-weight: bold;
+    }
+    button {
+      color: $blue-color;
+      font-weight: bold;
+    }
+
+    &_story {
+      height: 245px;
+      margin-bottom: calc($padding * 3);
+      padding-left: $padding;
+      background-color: $white-color;
+      border: 2px solid $grey-color;
+      border-radius: 5px;
+
+      .story_title {
+        @include flexSort(space-between, flex-start);
+        padding: $padding;
+      }
+
+      .story_user {
+        @include flexSort(flex-start, center);
+        padding: calc($padding/2) $padding;
+      }
+
+      .user_data {
+        margin-left: $padding;
+      }
+    }
+    &_recommend {
+      padding-left: $padding;
+      height: 200px;
+      background-color: $white-color;
+      border: 2px solid $grey-color;
+      border-radius: 5px;
+
+      .recommend_title {
+        @include flexSort(space-between, flex-start);
+        padding: $padding;
+      }
+    }
+
+    .recommend_user {
+      @include flexSort(space-between, center);
+      padding: calc($padding/2) $padding;
+      margin: 0;
+    }
+  }
+}
